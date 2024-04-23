@@ -11,6 +11,7 @@
 		9A2546632BD79FA900C83DC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2546622BD79FA900C83DC3 /* LoginViewController.swift */; };
 		9A2546652BD7A74E00C83DC3 /* Assign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2546642BD7A74E00C83DC3 /* Assign.storyboard */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
+		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
 		9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */; };
 		9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3952BD68AC30085206D /* AppDelegate.swift */; };
 		9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3972BD68AC30085206D /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +133,9 @@
 			dependencies = (
 			);
 			name = Mega6Box;
+			packageProductDependencies = (
+				9A95FB122BD7D506002F4F36 /* Kingfisher */,
+			);
 			productName = Mega6Box;
 			productReference = 9C3AA3922BD68AC30085206D /* Mega6Box.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 9C3AA3892BD68AC30085206D;
+			packageReferences = (
+				9A95FB112BD7D506002F4F36 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 9C3AA3932BD68AC30085206D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -429,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9A95FB112BD7D506002F4F36 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9A95FB122BD7D506002F4F36 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A95FB112BD7D506002F4F36 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9C3AA39E2BD68AC30085206D /* Mega6Box.xcdatamodeld */ = {
