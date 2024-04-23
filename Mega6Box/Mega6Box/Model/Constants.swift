@@ -28,4 +28,6 @@ public enum MovieApi {
     // MARK: - 영화배우 ID로 이미지 검색
     //https://api.themoviedb.org/3/person/64880/images?api_key=d3997ec594f8168a935621b953f7712b
     static let personImage = "https://api.themoviedb.org/3/person/"
+    
+    
 }

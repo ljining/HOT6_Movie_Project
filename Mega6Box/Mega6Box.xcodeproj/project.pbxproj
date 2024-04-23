@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A209ABE2BD7723D00E876EB /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A209ABD2BD7723D00E876EB /* UserSettings.swift */; };
 		9A909F202BD749A60064A813 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* login.storyboard */; };
 		9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3952BD68AC30085206D /* AppDelegate.swift */; };
 		9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3972BD68AC30085206D /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A209ABD2BD7723D00E876EB /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9A909F1F2BD749A60064A813 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3AA3952BD68AC30085206D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 				9C3AA3AD2BD6C89A0085206D /* View */,
 				9C3AA3AE2BD6C8AF0085206D /* Controller */,
 				9C3AA3A12BD68AC40085206D /* Assets.xcassets */,
-				9C3AA3A32BD68AC40085206D /* LaunchScreen.storyboard */,
 				9C3AA3A62BD68AC40085206D /* Info.plist */,
 				9C3AA39E2BD68AC30085206D /* Mega6Box.xcdatamodeld */,
 			);
@@ -91,6 +92,7 @@
 			children = (
 				9C3AA39B2BD68AC30085206D /* Main.storyboard */,
 				9A909F1F2BD749A60064A813 /* login.storyboard */,
+				9C3AA3A32BD68AC40085206D /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				9C3AA3992BD68AC30085206D /* MainViewController.swift */,
+				9A209ABD2BD7723D00E876EB /* UserSettings.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
+				9A209ABE2BD7723D00E876EB /* UserSettings.swift in Sources */,
 				9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */,
 				9C3AA3B02BD6C90E0085206D /* Movie.swift in Sources */,
 			);
