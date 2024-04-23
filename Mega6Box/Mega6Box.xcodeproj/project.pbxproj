@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A46D76A2BD748420010267F /* MainMovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A46D7692BD748420010267F /* MainMovieList.storyboard */; };
+		6A46D76E2BD74F4A0010267F /* MainMovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46D76D2BD74F4A0010267F /* MainMovieListViewController.swift */; };
+		6A46D7702BD784A60010267F /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46D76F2BD784A60010267F /* MovieListCollectionViewCell.swift */; };
 		9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3952BD68AC30085206D /* AppDelegate.swift */; };
 		9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3972BD68AC30085206D /* SceneDelegate.swift */; };
 		9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3992BD68AC30085206D /* MainViewController.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		6A46D7692BD748420010267F /* MainMovieList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovieList.storyboard; sourceTree = "<group>"; };
+		6A46D76D2BD74F4A0010267F /* MainMovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovieListViewController.swift; sourceTree = "<group>"; };
+		6A46D76F2BD784A60010267F /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3AA3952BD68AC30085206D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C3AA3972BD68AC30085206D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				9C3AA3992BD68AC30085206D /* MainViewController.swift */,
+				6A46D76D2BD74F4A0010267F /* MainMovieListViewController.swift */,
+				6A46D76F2BD784A60010267F /* MovieListCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 				9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */,
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
+				6A46D76E2BD74F4A0010267F /* MainMovieListViewController.swift in Sources */,
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
+				6A46D7702BD784A60010267F /* MovieListCollectionViewCell.swift in Sources */,
 				9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */,
 				9C3AA3B02BD6C90E0085206D /* Movie.swift in Sources */,
 			);
@@ -258,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -315,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
