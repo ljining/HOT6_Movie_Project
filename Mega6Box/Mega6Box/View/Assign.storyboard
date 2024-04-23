@@ -32,12 +32,15 @@
                                                     <constraint firstAttribute="height" constant="28" id="prX-8L-aa7"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlT-fs-Oql">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFf-g4-ohh">
                                                 <rect key="frame" x="38" y="0.0" width="310" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="third"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tapId:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="cXK-pv-L6f"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="fOk-rK-tsL" secondAttribute="bottom" id="2eb-le-pCM"/>
@@ -57,12 +60,15 @@
                                                     <constraint firstAttribute="width" constant="28" id="ayZ-fN-aOK"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-ue-GjS">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQR-Pz-dXg" userLabel="pass">
                                                 <rect key="frame" x="38" y="0.0" width="310" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="third"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tapPassword:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="zkg-7d-VW4"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="S29-TS-V79" secondAttribute="trailing" constant="320" id="e0h-kn-Zwe"/>
@@ -82,12 +88,15 @@
                                                     <constraint firstAttribute="width" constant="28" id="fCp-PT-VAW"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-SP-3e4">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-v4-gad">
                                                 <rect key="frame" x="38" y="0.0" width="310" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="third"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tapConformPassword:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="1IL-m2-QVG"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Lzf-7y-RUk" firstAttribute="leading" secondItem="yLP-pY-Ssl" secondAttribute="leading" id="95y-gU-Z93"/>
@@ -108,22 +117,22 @@
                                                 <rect key="frame" x="0.0" y="1.6666666666666643" width="28" height="25.000000000000004"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="Tss-gc-h9S"/>
-                                                    <constraint firstAttribute="width" constant="28" id="qgJ-if-Pys"/>
+                                                    <constraint firstAttribute="width" constant="28" id="8I7-Nm-EQL"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-MH-oba">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tp9-dr-ZRm">
                                                 <rect key="frame" x="38" y="0.0" width="310" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="third"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tapName:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="K4w-CQ-DdI"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8VS-8i-mDs" secondAttribute="trailing" constant="320" id="0VY-8f-AUe"/>
-                                            <constraint firstItem="8VS-8i-mDs" firstAttribute="leading" secondItem="dsY-y8-PBt" secondAttribute="leading" id="Bn1-dQ-W8B"/>
-                                            <constraint firstAttribute="bottom" secondItem="8VS-8i-mDs" secondAttribute="bottom" id="VrU-Bp-h4k"/>
-                                            <constraint firstItem="8VS-8i-mDs" firstAttribute="top" secondItem="dsY-y8-PBt" secondAttribute="top" id="dak-vl-duH"/>
+                                            <constraint firstItem="8VS-8i-mDs" firstAttribute="top" secondItem="dsY-y8-PBt" secondAttribute="top" id="NJz-gx-ne4"/>
+                                            <constraint firstItem="8VS-8i-mDs" firstAttribute="leading" secondItem="dsY-y8-PBt" secondAttribute="leading" id="dIh-BG-K0h"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="drb-rK-zft">
@@ -133,11 +142,35 @@
                                                 <rect key="frame" x="0.0" y="0.66666666666666607" width="28" height="27"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="482-Sj-rxd"/>
-                                                    <constraint firstAttribute="width" constant="28" id="nJZ-jl-bFb"/>
+                                                    <constraint firstAttribute="width" constant="28" id="4c3-RO-N4t"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4L-yw-8i3">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="전화번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-Yt-Tss">
+                                                <rect key="frame" x="38" y="0.0" width="310" height="28"/>
+                                                <color key="textColor" name="third"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tapPhoneNumber:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="YaB-Pf-NTh"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="8n3-An-Nhb" firstAttribute="leading" secondItem="drb-rK-zft" secondAttribute="leading" id="F7w-x7-zKQ"/>
+                                            <constraint firstItem="8n3-An-Nhb" firstAttribute="top" secondItem="drb-rK-zft" secondAttribute="top" id="OZF-dj-C5d"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gh3-bW-4BR">
+                                        <rect key="frame" x="0.0" y="96" width="348" height="28"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-bQ-Vjf">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="28" height="25.000000000000004"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="Vmw-Jx-zKS"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일을 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAd-Rv-vbb">
                                                 <rect key="frame" x="38" y="0.0" width="310" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="third"/>
@@ -145,35 +178,8 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="8n3-An-Nhb" firstAttribute="top" secondItem="drb-rK-zft" secondAttribute="top" id="1yN-PF-58Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="8n3-An-Nhb" secondAttribute="trailing" constant="320" id="EtW-gP-bm4"/>
-                                            <constraint firstAttribute="bottom" secondItem="8n3-An-Nhb" secondAttribute="bottom" id="btg-EI-A19"/>
-                                            <constraint firstItem="8n3-An-Nhb" firstAttribute="leading" secondItem="drb-rK-zft" secondAttribute="leading" id="yNt-Zw-ALD"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gh3-bW-4BR">
-                                        <rect key="frame" x="0.0" y="96" width="348" height="28"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-bQ-Vjf">
-                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="28" height="25.000000000000004"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="eeU-U5-scx"/>
-                                                    <constraint firstAttribute="width" constant="28" id="yBE-6W-QuC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="7Am-z5-6zj">
-                                                <rect key="frame" x="38" y="0.0" width="310" height="28"/>
-                                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                                    <!--1970-01-01 11:00:00 +0000-->
-                                                </date>
-                                                <locale key="locale" localeIdentifier="ko"/>
-                                            </datePicker>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="7xt-bQ-Vjf" secondAttribute="bottom" id="aPV-Io-zgZ"/>
-                                            <constraint firstItem="7xt-bQ-Vjf" firstAttribute="top" secondItem="Gh3-bW-4BR" secondAttribute="top" id="de6-Zt-yB7"/>
-                                            <constraint firstItem="7xt-bQ-Vjf" firstAttribute="leading" secondItem="Gh3-bW-4BR" secondAttribute="leading" id="tAW-fn-GqP"/>
+                                            <constraint firstItem="7xt-bQ-Vjf" firstAttribute="leading" secondItem="Gh3-bW-4BR" secondAttribute="leading" id="J9Y-Lr-GIH"/>
+                                            <constraint firstItem="7xt-bQ-Vjf" firstAttribute="top" secondItem="Gh3-bW-4BR" secondAttribute="top" id="nen-84-74k"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -184,21 +190,27 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="가입하기"/>
+                                <connections>
+                                    <action selector="tapAssign:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MVs-bY-qo0"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0VG-UA-hpZ" userLabel="profile">
-                                <rect key="frame" x="116.66666666666669" y="136" width="160" height="158.66666666666669"/>
+                                <rect key="frame" x="131.66666666666666" y="136" width="129.99999999999997" height="128.66666666666669"/>
                                 <color key="tintColor" name="third"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="3mK-8q-T1G"/>
-                                    <constraint firstAttribute="width" constant="160" id="VkT-Wo-5rb"/>
+                                    <constraint firstAttribute="height" constant="130" id="3mK-8q-T1G"/>
+                                    <constraint firstAttribute="width" constant="130" id="VkT-Wo-5rb"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="닉네임" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ei-j1-M4y">
-                                <rect key="frame" x="40" y="303" width="313" height="34"/>
+                                <rect key="frame" x="40" y="273" width="313" height="64"/>
                                 <color key="tintColor" name="third"/>
                                 <color key="textColor" name="third"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tapNickName:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="qW4-Qg-Goj"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -223,12 +235,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="profileImage" destination="0VG-UA-hpZ" id="CNr-IF-sSg"/>
+                        <outlet property="assign" destination="Pog-T6-9vQ" id="atc-t8-zGn"/>
+                        <outlet property="birthday" destination="DAd-Rv-vbb" id="e8t-1Q-XBJ"/>
+                        <outlet property="conformPass" destination="j4V-v4-gad" id="1rQ-88-pp3"/>
+                        <outlet property="id" destination="JFf-g4-ohh" id="Ojj-oC-31D"/>
+                        <outlet property="name" destination="tp9-dr-ZRm" id="7ak-9m-RJH"/>
+                        <outlet property="nickname" destination="6Ei-j1-M4y" id="Fir-ZQ-luO"/>
+                        <outlet property="pass" destination="bQR-Pz-dXg" id="qW2-xJ-GpS"/>
+                        <outlet property="phoneNum" destination="HfO-Yt-Tss" id="VDh-oC-yjb"/>
+                        <outlet property="profile" destination="0VG-UA-hpZ" id="ZwJ-7k-nXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="-3"/>
+            <point key="canvasLocation" x="348.85496183206106" y="-3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

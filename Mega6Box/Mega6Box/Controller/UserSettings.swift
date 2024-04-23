@@ -31,6 +31,10 @@ class UserSettings {
         get { defaults.string(forKey: "phoneNumber") }
         set { defaults.set(newValue, forKey: "phoneNumber") }
     }
+    var nickName: String? {
+        get { defaults.string(forKey: "nickName") }
+        set { defaults.set(newValue, forKey: "nickName") }
+    }
 
     var birthDate: Date? {
         get {
