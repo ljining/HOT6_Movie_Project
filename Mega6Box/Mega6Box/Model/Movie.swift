@@ -26,8 +26,8 @@ struct Movie: Decodable {
         case originalTitle = "original_title"
         case title
         case overview
-      case posterPath = "poster_path"
-      case genreIds = "genre_ids"
+        case posterPath = "poster_path"
+        case genreIds = "genre_ids"
         case backdropPath = "backdrop_path"
         case releaseDate = "release_date" //개봉일
     }
