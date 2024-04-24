@@ -89,7 +89,7 @@ final class NetworkController {
     
     // MARK: - 영화 ID로 영화 검색
     //https://api.themoviedb.org/3/movie/838209?api_key=d3997ec594f8168a935621b953f7712b&language=ko-ko
-    func fetchSearchMovieId(movieId: Int, apiKey: String, language: String, completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func fetchSearchMovieId(movieId: Int, apiKey: String, language: String, completion: @escaping (Result<MovieDetail, Error>) -> Void) {
         //1. API 요청 URL
         let urlString = "\(MovieApi.searchMovieId)/\(movieId)?api_key=\(MovieApi.apiKey)&language=\(MovieApi.language)"
         
@@ -112,9 +112,9 @@ final class NetworkController {
                 do {
                     let decoder = JSONDecoder()
                     // JSON 응답을 MovieResults 구조체로 디코딩
-                    let movieResults = try decoder.decode(MovieResults.self, from: data)
+                    let movieDetail = try decoder.decode(MovieDetail.self, from: data)
                     // 디코딩된 결과를 completion 핸들러에 전달
-                    completion(.success(movieResults.results))
+                    completion(.success(movieDetail))
                 } catch {
                     completion(.failure(error))
                 }
@@ -152,6 +152,84 @@ final class NetworkController {
                     let personResults = try decoder.decode(PersonResults.self, from: data)
                     // 디코딩된 결과를 completion 핸들러에 전달
                     completion(.success(personResults.results))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        //4. 작업 시작
+        task.resume()
+    }
+    
+    
+    // MARK: - 영화배우 ID로 이미지 검색
+    //https://api.themoviedb.org/3/person/64880/images?api_key=d3997ec594f8168a935621b953f7712b
+    //static let personImage = "https://api.themoviedb.org/3/person/"
+    func fetchPersonImages(id: Int, apiKey: String, completion: @escaping (Result<PersonImage, Error>) -> Void) {
+        //1. API 요청 URL
+        let urlString = "\(MovieApi.personImage)\(id)/images?api_key=\(MovieApi.apiKey)"
+        
+        //2. URL 생성
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        print("이미지url: \(url)")
+        
+        //3. 작업 만들기
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            // 에러 처리
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            // 데이터 파싱
+            if let data = data {
+                do {
+                    //let decoder = JSONDecoder()
+                    // JSON 응답을 MovieResults 구조체로 디코딩
+                    let personImage = try JSONDecoder().decode(PersonImage.self, from: data)
+                    // 디코딩된 결과를 completion 핸들러에 전달
+                    //completion(.success(personImage.profiles))
+                    completion(.success(personImage))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        //4. 작업 시작
+        task.resume()
+    }
+        
+    // MARK: - 영화ID로 출연 배우 검색
+    //https://api.themoviedb.org/3/movie/838209/credits?api_key=d3997ec594f8168a935621b953f7712b
+    //static let searchCredits = "https://api.themoviedb.org/3/movie/"
+    func fetchSearchCredits(movieId: Int, apiKey: String, completion: @escaping (Result<[Cast], Error>) -> Void) {
+        //1. API 요청 URL
+        let urlString = "\(MovieApi.searchCredits)\(movieId)/credits?api_key=\(MovieApi.apiKey)"
+        
+        //2. URL 생성
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        print("url: \(url)")
+        
+        //3. 작업 만들기
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            // 에러 처리
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            // 데이터 파싱
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    // JSON 응답을 MovieResults 구조체로 디코딩
+                    let creditData = try decoder.decode(Credit.self, from: data)
+                    // 디코딩된 결과를 completion 핸들러에 전달
+                    completion(.success(creditData.cast))
                 } catch {
                     completion(.failure(error))
                 }

@@ -22,6 +22,9 @@
 		9C4008C72BD779AD00A73DE1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4008C62BD779AD00A73DE1 /* Kingfisher */; };
 		9C4008C92BD79F8800A73DE1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4008C82BD79F8800A73DE1 /* Person.swift */; };
 		9C4008CB2BD7A14600A73DE1 /* PersonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4008CA2BD7A14600A73DE1 /* PersonImage.swift */; };
+		9C4008CD2BD7F61000A73DE1 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4008CC2BD7F61000A73DE1 /* Credit.swift */; };
+		9CC40B1A2BD8A8D80083C211 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40B192BD8A8D80083C211 /* MovieDetail.swift */; };
+		9CC40B1C2BD8B9AF0083C211 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		9C4008C32BD7510400A73DE1 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		9C4008C82BD79F8800A73DE1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		9C4008CA2BD7A14600A73DE1 /* PersonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImage.swift; sourceTree = "<group>"; };
+		9C4008CC2BD7F61000A73DE1 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		9CC40B192BD8A8D80083C211 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +96,12 @@
 		9C3AA3AC2BD6C88E0085206D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C3AA3AF2BD6C90E0085206D /* Movie.swift */,
 				9C3AA3B32BD6CAA20085206D /* Constants.swift */,
+				9C3AA3AF2BD6C90E0085206D /* Movie.swift */,
 				9C4008C82BD79F8800A73DE1 /* Person.swift */,
 				9C4008CA2BD7A14600A73DE1 /* PersonImage.swift */,
+				9C4008CC2BD7F61000A73DE1 /* Credit.swift */,
+				9CC40B192BD8A8D80083C211 /* MovieDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,9 +118,10 @@
 		9C3AA3AE2BD6C8AF0085206D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C4008C32BD7510400A73DE1 /* NetworkController.swift */,
 				9C3AA3992BD68AC30085206D /* MainViewController.swift */,
 				9C4008C12BD74A1700A73DE1 /* MovieDetailViewController.swift */,
-				9C4008C32BD7510400A73DE1 /* NetworkController.swift */,
+				9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,13 +207,16 @@
 				9C4008C42BD7510400A73DE1 /* NetworkController.swift in Sources */,
 				9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */,
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
+				9CC40B1A2BD8A8D80083C211 /* MovieDetail.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
 				9C4008C22BD74A1700A73DE1 /* MovieDetailViewController.swift in Sources */,
 				9C4008CB2BD7A14600A73DE1 /* PersonImage.swift in Sources */,
 				9C4008C92BD79F8800A73DE1 /* Person.swift in Sources */,
 				9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */,
+				9CC40B1C2BD8B9AF0083C211 /* ProfileViewController.swift in Sources */,
 				9C3AA3B02BD6C90E0085206D /* Movie.swift in Sources */,
+				9C4008CD2BD7F61000A73DE1 /* Credit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

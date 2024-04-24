@@ -10,13 +10,17 @@ import Foundation
 // MARK: - 사람 이미지
 struct PersonImage: Decodable {
     let id: Int
-    let profiles: [Profiles]
+    let profiles: [profiles]
 }
 
-struct Profiles: Decodable {
+struct profiles: Decodable {
     let filePath: String
+    let height: Int
+    let width: Int
     
     enum CodingKeys: String, CodingKey {
         case filePath = "file_path"
+        case height
+        case width
     }
 }

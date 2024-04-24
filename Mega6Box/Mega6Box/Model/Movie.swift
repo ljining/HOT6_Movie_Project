@@ -27,6 +27,7 @@ struct Movie: Decodable {
     }
 }
 
+
 //struct Movie: Decodable {
 //    let originalTitle: String
 //    let title: String

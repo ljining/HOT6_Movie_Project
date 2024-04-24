@@ -84,11 +84,11 @@
                                     <constraint firstAttribute="height" constant="100" id="O2E-Cg-dKX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2U-Zp-KBj">
-                                <rect key="frame" x="10" y="594" width="373" height="120"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2U-Zp-KBj" userLabel="ProfileView">
+                                <rect key="frame" x="10" y="594" width="373" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="55d-9o-8cI"/>
+                                    <constraint firstAttribute="height" constant="100" id="55d-9o-8cI"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="backdropImageView" destination="yIR-Af-Rau" id="WJW-qj-Nhi"/>
                         <outlet property="overviewTextView" destination="4fD-OG-22a" id="Tva-ft-gCA"/>
+                        <outlet property="profileView" destination="b2U-Zp-KBj" id="iFq-E9-eRc"/>
                         <outlet property="releaseDateLabel" destination="rFx-Po-MMG" id="7HM-rB-RgA"/>
                         <outlet property="runtimeLabel" destination="BXU-5N-kUY" id="gOZ-h3-D4s"/>
                         <outlet property="titleLabel" destination="xBd-KB-GcI" id="apR-F0-ocd"/>
@@ -119,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052.6717557251909" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="-63.358778625954194" y="-96.478873239436624"/>
         </scene>
     </scenes>
     <resources>
