@@ -9,6 +9,7 @@ import UIKit
 
 class MovieListCollectionViewCell: UICollectionViewCell {
     
+    
     static let id = "MovieListCell"
     
     // Test Data
@@ -22,7 +23,6 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
-        return button
         
         // Set Button
         // Button Background Image
@@ -61,4 +61,6 @@ class MovieListCollectionViewCell: UICollectionViewCell {
 //            self.posterButton.set
 //        }
     }
+    
+
 }
