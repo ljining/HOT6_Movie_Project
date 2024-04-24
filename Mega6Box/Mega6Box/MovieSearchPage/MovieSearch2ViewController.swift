@@ -21,7 +21,7 @@ class MovieSearch2ViewController: UIViewController {
             guard let vc = storyboard.instantiateViewController(withIdentifier: "MoiveReservationViewController") as? MoiveReservationViewController else {
                 return }
             self.present(vc, animated: true)
-            }
+    }
 }
 
 extension MovieSearch2ViewController {

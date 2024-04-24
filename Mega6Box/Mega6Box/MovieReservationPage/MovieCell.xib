@@ -11,27 +11,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="gTV-IL-0wX" customClass="MovieCell" customModule="Mega6Box" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="84" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="84" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SK0-gZ-YJ2">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-sf-YEb">
-                                <rect key="frame" x="8" y="50" width="64" height="15"/>
+                                <rect key="frame" x="8" y="53" width="68" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.38431372549999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmO-Cg-Nyo">
-                                <rect key="frame" x="3" y="10" width="74" height="50"/>
+                                <rect key="frame" x="3" y="10" width="78" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ryj-Y7-ah0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -40,7 +40,7 @@
                         <constraints>
                             <constraint firstItem="dmO-Cg-Nyo" firstAttribute="leading" secondItem="SK0-gZ-YJ2" secondAttribute="leading" constant="3" id="0aA-1l-FRn"/>
                             <constraint firstAttribute="trailing" secondItem="dmO-Cg-Nyo" secondAttribute="trailing" constant="3" id="2ba-iY-TLf"/>
-                            <constraint firstAttribute="bottom" secondItem="NsX-sf-YEb" secondAttribute="bottom" constant="15" id="34j-C6-PbF"/>
+                            <constraint firstAttribute="bottom" secondItem="NsX-sf-YEb" secondAttribute="bottom" constant="12" id="34j-C6-PbF"/>
                             <constraint firstAttribute="trailing" secondItem="NsX-sf-YEb" secondAttribute="trailing" constant="8" id="Dbm-ge-q76"/>
                             <constraint firstItem="dmO-Cg-Nyo" firstAttribute="top" secondItem="SK0-gZ-YJ2" secondAttribute="top" constant="10" id="FCc-KA-ifY"/>
                             <constraint firstItem="NsX-sf-YEb" firstAttribute="leading" secondItem="SK0-gZ-YJ2" secondAttribute="leading" constant="8" id="KqP-C0-cBr"/>
@@ -56,12 +56,12 @@
                 <constraint firstItem="SK0-gZ-YJ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Yel-Qd-Pzg"/>
                 <constraint firstAttribute="trailing" secondItem="SK0-gZ-YJ2" secondAttribute="trailing" id="g7i-qt-APC"/>
             </constraints>
-            <size key="customSize" width="104" height="118"/>
+            <size key="customSize" width="108" height="118"/>
             <connections>
                 <outlet property="seatLabel" destination="NsX-sf-YEb" id="ewj-Id-eSt"/>
                 <outlet property="timeLabel" destination="dmO-Cg-Nyo" id="ddo-XS-ZsL"/>
             </connections>
-            <point key="canvasLocation" x="337.40458015267177" y="14.788732394366198"/>
+            <point key="canvasLocation" x="340.45801526717554" y="14.788732394366198"/>
         </collectionViewCell>
     </objects>
 </document>

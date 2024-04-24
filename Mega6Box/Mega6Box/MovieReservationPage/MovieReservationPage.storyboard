@@ -65,11 +65,11 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-Bt-gR2">
-                                <rect key="frame" x="16" y="516" width="361" height="302"/>
+                                <rect key="frame" x="13" y="558" width="366" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Vmj-5e-a2u">
-                                    <size key="itemSize" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.47058823529999999" green="0.26274509800000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Vmj-5e-a2u">
+                                    <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -81,11 +81,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfY-qd-zqP">
-                                <rect key="frame" x="26" y="336" width="75" height="35"/>
+                                <rect key="frame" x="27" y="336" width="54" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="강남"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFR-Jo-27l">
+                                <rect key="frame" x="57" y="783.66666666666663" width="279" height="34.333333333333371"/>
+                                <color key="tintColor" red="0.47058823529999999" green="0.26274509800000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="예매하기"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iso-dM-DzL">
+                                <rect key="frame" x="0.0" y="444" width="393" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,12 +105,17 @@
                             <constraint firstItem="3rd-xV-pjG" firstAttribute="top" secondItem="V8C-9o-f0f" secondAttribute="bottom" constant="22" id="83t-Rn-fj0"/>
                             <constraint firstItem="V8C-9o-f0f" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="22" id="9Tf-jT-PXl"/>
                             <constraint firstItem="fiD-8o-94p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="KMl-vw-5p7"/>
+                            <constraint firstItem="DFR-Jo-27l" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="57" id="Rtl-H0-Xyc"/>
+                            <constraint firstItem="DFR-Jo-27l" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="VDD-TT-6yL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DFR-Jo-27l" secondAttribute="trailing" constant="57" id="hwv-fY-zSU"/>
                             <constraint firstItem="fiD-8o-94p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="22" id="oZO-Ps-9qG"/>
                             <constraint firstItem="V8C-9o-f0f" firstAttribute="leading" secondItem="fiD-8o-94p" secondAttribute="trailing" constant="19" id="rzO-JP-f0P"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="8DT-Bt-gR2" id="Q8H-qg-Wpu"/>
+                        <outlet property="layout" destination="Vmj-5e-a2u" id="QVE-oP-Kxi"/>
+                        <outlet property="lineview" destination="Iso-dM-DzL" id="6KU-yV-pHg"/>
                         <outlet property="moivenameLabel" destination="h2B-fc-e9f" id="HRC-as-WdD"/>
                         <outlet property="moviegenreLabel" destination="sab-kp-sRs" id="fBm-dK-BU3"/>
                         <outlet property="movieinforButton" destination="3rd-xV-pjG" id="3vX-Rd-zZj"/>
