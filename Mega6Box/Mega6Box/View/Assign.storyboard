@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0VG-UA-hpZ" userLabel="profile">
-                                <rect key="frame" x="131.66666666666666" y="136" width="129.99999999999997" height="128.66666666666669"/>
+                                <rect key="frame" x="131.66666666666666" y="135" width="129.99999999999997" height="130"/>
                                 <color key="tintColor" name="third"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="3mK-8q-T1G"/>

@@ -103,6 +103,12 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
             label.text = "로그인 성공"
         }else{
             label.isHidden = false
+            
+            let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+            // navigationController를 사용하여 뷰 컨트롤러를 push
+            if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
         
     }

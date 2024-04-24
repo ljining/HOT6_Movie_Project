@@ -11,6 +11,9 @@
 		9A2546632BD79FA900C83DC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2546622BD79FA900C83DC3 /* LoginViewController.swift */; };
 		9A2546652BD7A74E00C83DC3 /* Assign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2546642BD7A74E00C83DC3 /* Assign.storyboard */; };
 		9A39331D2BD88A1E001BEFD3 /* LoginDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39331C2BD88A1E001BEFD3 /* LoginDetailController.swift */; };
+		9A3933212BD8AEAD001BEFD3 /* myPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3933202BD8AEAD001BEFD3 /* myPage.storyboard */; };
+		9A3933232BD8CBC4001BEFD3 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */; };
+		9A3933252BD8D201001BEFD3 /* myPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3933242BD8D201001BEFD3 /* myPageCell.swift */; };
 		9A4F58212BD884FD002EB02B /* LoginDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
 		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
@@ -31,6 +34,9 @@
 		9A2546622BD79FA900C83DC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A2546642BD7A74E00C83DC3 /* Assign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assign.storyboard; sourceTree = "<group>"; };
 		9A39331C2BD88A1E001BEFD3 /* LoginDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDetailController.swift; sourceTree = "<group>"; };
+		9A3933202BD8AEAD001BEFD3 /* myPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = myPage.storyboard; sourceTree = "<group>"; };
+		9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		9A3933242BD8D201001BEFD3 /* myPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageCell.swift; sourceTree = "<group>"; };
 		9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginDetail.storyboard; sourceTree = "<group>"; };
 		9A909F1F2BD749A60064A813 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			children = (
 				9C3AA3AF2BD6C90E0085206D /* Movie.swift */,
 				9C3AA3B32BD6CAA20085206D /* Constants.swift */,
+				9A3933242BD8D201001BEFD3 /* myPageCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +114,7 @@
 				9C3AA3A32BD68AC40085206D /* LaunchScreen.storyboard */,
 				9A2546642BD7A74E00C83DC3 /* Assign.storyboard */,
 				9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */,
+				9A3933202BD8AEAD001BEFD3 /* myPage.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 				9A2546622BD79FA900C83DC3 /* LoginViewController.swift */,
 				9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */,
 				9A39331C2BD88A1E001BEFD3 /* LoginDetailController.swift */,
+				9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 				9C3AA3A52BD68AC40085206D /* Base in Resources */,
 				9A2546652BD7A74E00C83DC3 /* Assign.storyboard in Resources */,
 				9C3AA39D2BD68AC30085206D /* Base in Resources */,
+				9A3933212BD8AEAD001BEFD3 /* myPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,9 +219,11 @@
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
+				9A3933252BD8D201001BEFD3 /* myPageCell.swift in Sources */,
 				9A209ABE2BD7723D00E876EB /* UserSettings.swift in Sources */,
 				9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */,
 				9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */,
+				9A3933232BD8CBC4001BEFD3 /* MyPageViewController.swift in Sources */,
 				9C3AA3B02BD6C90E0085206D /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
