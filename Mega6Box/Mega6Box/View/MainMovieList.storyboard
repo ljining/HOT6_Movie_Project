@@ -34,7 +34,7 @@
                                 </constraints>
                                 <collectionViewLayout key="collectionViewLayout" id="xF5-E6-K4M"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieListCell" id="PLV-Uc-FJ5">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MovieListCell" id="PLV-Uc-FJ5" customClass="MovieListCollectionViewCell" customModule="Mega6Box" customModuleProvider="target">
                                         <rect key="frame" x="-1.6666666666666667" y="0.0" width="396" height="332"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -98,7 +98,7 @@
                                                             <fragment content="예매하기">
                                                                 <attributes>
                                                                     <font key="NSFont" size="12" name="AppleSDGothicNeo-Bold"/>
-                                                                    <font key="NSOriginalFont" size="12" name=".SFNS-Regular"/>
+                                                                    <font key="NSOriginalFont" metaFont="cellTitle"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -114,6 +114,10 @@
                                             <constraint firstItem="xRW-vd-6hG" firstAttribute="top" secondItem="Vbg-Al-KcK" secondAttribute="bottom" constant="48" id="gsw-na-lSN"/>
                                         </constraints>
                                         <size key="customSize" width="396" height="332"/>
+                                        <connections>
+                                            <outlet property="posterImage" destination="be1-me-XV8" id="gan-2X-Uzr"/>
+                                            <outlet property="reservationMovie" destination="sKd-DX-IR6" id="6NU-er-Z7K"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -155,7 +159,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="393" height="224"/>
                                         <connections>
-                                            <outlet property="backDropImage" destination="GLl-Oy-YED" id="qqO-3Z-whh"/>
+                                            <outlet property="backDropImage" destination="GLl-Oy-YED" id="1ac-BX-UqH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -241,7 +245,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pageControl" destination="8rg-ER-ZU2" id="t13-UE-qO7"/>
+                        <outlet property="pageControl" destination="8rg-ER-ZU2" id="eYj-cb-3hy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,7 +262,7 @@
         <image name="roundSquare-03" width="628.5" height="620.5"/>
         <image name="search-01" width="625" height="625"/>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

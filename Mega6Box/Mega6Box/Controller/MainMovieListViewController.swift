@@ -14,13 +14,10 @@ class MainMovieListViewController: UIViewController {
     var movieImages: [String] = ["button-04", "button-05", "button-06", "logo-02", "roundSquare-03"]
     var currentPage:Int = 0
     
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
     
-    // MovieList 컬렉션뷰
-    var posterImages: [URL] = []
-    var movieListView: Int = 0
-        
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

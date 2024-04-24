@@ -7,8 +7,10 @@
 
 import UIKit
 
+
 class BackDropCell: UICollectionViewCell{
         
     @IBOutlet weak var backDropImage: UIImageView!
-}
+    
 
+}
