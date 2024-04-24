@@ -16,6 +16,7 @@
 		3967E3502BD7FAC9003F587F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967E34E2BD7FAC9003F587F /* MovieCell.swift */; };
 		3967E3512BD7FAC9003F587F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3967E34F2BD7FAC9003F587F /* MovieCell.xib */; };
 		39BB6D7A2BD8AF9600318877 /* ContainerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BB6D792BD8AF9600318877 /* ContainerManager.swift */; };
+		9A59F7B52BD8F1C000798DCD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59F7B42BD8F1C000798DCD /* CoreDataManager.swift */; };
 		9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3952BD68AC30085206D /* AppDelegate.swift */; };
 		9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3972BD68AC30085206D /* SceneDelegate.swift */; };
 		9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AA3992BD68AC30085206D /* MainViewController.swift */; };
@@ -43,6 +44,7 @@
 		3967E34E2BD7FAC9003F587F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		3967E34F2BD7FAC9003F587F /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		39BB6D792BD8AF9600318877 /* ContainerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerManager.swift; sourceTree = "<group>"; };
+		9A59F7B42BD8F1C000798DCD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3AA3952BD68AC30085206D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C3AA3972BD68AC30085206D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				9C4008C12BD74A1700A73DE1 /* MovieDetailViewController.swift */,
 				9C4008C32BD7510400A73DE1 /* NetworkController.swift */,
 				39BB6D792BD8AF9600318877 /* ContainerManager.swift */,
+				9A59F7B42BD8F1C000798DCD /* CoreDataManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */,
 				3967E31F2BD7AB80003F587F /* MoiveReservationViewController.swift in Sources */,
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
+				9A59F7B52BD8F1C000798DCD /* CoreDataManager.swift in Sources */,
 				3967E34D2BD7F5E5003F587F /* Screenigtime.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
