@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OAt-xh-0gT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AF6-BR-Qcp">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--Movie Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="MovieSearch1VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MovieSearchViewController" customModule="Mega6Box" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MovieSearchViewController" customModule="Mega6Box" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,9 +94,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="TgO-3g-5CI"/>
                     <connections>
-                        <outlet property="ImageView1" destination="SiO-4U-5fQ" id="aeV-ZZ-sX9"/>
-                        <outlet property="ImageView2" destination="FBe-Zh-4VY" id="8m3-hs-Uos"/>
                         <outlet property="MEGA6BOXLabel1" destination="x93-ji-F6b" id="fec-54-xqP"/>
+                        <outlet property="imageView1" destination="SiO-4U-5fQ" id="ZWm-wS-lFj"/>
+                        <outlet property="imageView2" destination="FBe-Zh-4VY" id="oqr-Xd-E9G"/>
                         <outlet property="imageView3" destination="7N8-G4-Ots" id="wrO-Jc-ykz"/>
                         <outlet property="imageView4" destination="lDT-qb-0sW" id="BjL-SV-oVV"/>
                         <outlet property="movieLabel" destination="Kt7-IW-srJ" id="9ex-W1-eRd"/>
@@ -105,12 +105,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823.6641221374043" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="3750.3816793893129" y="-27.464788732394368"/>
         </scene>
         <!--Movie Search2 View Controller-->
         <scene sceneID="NTH-EP-Lf5">
             <objects>
-                <viewController storyboardIdentifier="MovieSearch2VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9M9-dL-XnO" customClass="MovieSearch2ViewController" customModule="Mega6Box" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieSearch2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9M9-dL-XnO" customClass="MovieSearch2ViewController" customModule="Mega6Box" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xzk-Jg-9Io">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,6 +179,9 @@
                                 <color key="tintColor" red="0.47058823529411764" green="0.2627450980392157" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="예매하기"/>
+                                <connections>
+                                    <action selector="reservationButtion:" destination="9M9-dL-XnO" eventType="touchUpInside" id="0Od-du-CyJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VDd-Ky-dcA"/>
@@ -201,38 +204,35 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Imageview5" destination="9hX-gl-B4Q" id="Hpe-NE-VZf"/>
                         <outlet property="MAGA6BOXLabel2" destination="0VG-op-hFL" id="aF0-yN-7Wd"/>
-                        <outlet property="MEGA6BOXLabel2" destination="0VG-op-hFL" id="OZf-TP-NFr"/>
                         <outlet property="genreLabel" destination="cLs-Ys-Sjh" id="FOX-rb-fYM"/>
                         <outlet property="imageView5" destination="9hX-gl-B4Q" id="RoJ-Eu-E8U"/>
-                        <outlet property="movienameLabel" destination="Z9z-t4-YxV" id="Vo5-we-2AT"/>
                         <outlet property="plotLabel" destination="e47-7u-nIf" id="t6x-Fb-Mkq"/>
                         <outlet property="releaseLabel" destination="t1V-qd-m2L" id="wtY-FK-JKS"/>
-                        <outlet property="searchbar2" destination="8c2-Bs-CSN" id="j25-HS-CdJ"/>
+                        <outlet property="searchBar2" destination="8c2-Bs-CSN" id="tzE-nu-tVt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEm-Ty-Lso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660.3053435114502" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="4587.0229007633588" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="CMw-X6-F2D">
+        <scene sceneID="d7V-Xd-t6j">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OAt-xh-0gT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AF6-BR-Qcp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBc-2p-zgd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zb-u1-6PF">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="cdO-t5-cU4"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Kls-Mc-VRo"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6LC-Hf-ImH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gez-Tb-2zH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896.9465648854962" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2823.6641221374043" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>

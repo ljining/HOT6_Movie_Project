@@ -2,7 +2,7 @@
 import UIKit
 
 class MovieSearch2ViewController: UIViewController {
-
+    
     @IBOutlet weak var MAGA6BOXLabel2: UILabel!
     @IBOutlet weak var searchBar2: UISearchBar!
     @IBOutlet weak var imageView5: UIImageView!
@@ -14,9 +14,14 @@ class MovieSearch2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbarchange2()
-
-    
     }
+    //예매하기 화면이동부분
+    @IBAction func reservationButtion(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "MovieReservationPage", bundle: Bundle.main)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "MoiveReservationViewController") as? MoiveReservationViewController else {
+                return }
+            self.present(vc, animated: true)
+            }
 }
 
 extension MovieSearch2ViewController {

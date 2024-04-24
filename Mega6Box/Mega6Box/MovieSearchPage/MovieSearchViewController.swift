@@ -17,29 +17,30 @@ class MovieSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbarchange()
-      
     }
-    
 }
-//magnifyingglass.circle
+
 extension MovieSearchViewController {
     
+    
+//    func getplaymoivedata() {
+//        NetworkController.shared.fetchMovieNowPlaying(apiKey: <#T##String#>, language: <#T##String#>, region: <#T##String#>, page: <#T##Int#>, completion: <#T##(Result<[Movie], Error>) -> Void#>)
+//    }
+    
+//    func setupSearchController() {
+//        let searchController = UISearchController(searchResultsController: UIStoryboard(name: "MovieSearch2VC", bundle: nil).instantiateInitialViewController(withIdentifier:"MovieSearch2ViewController") as! MovieSearch2ViewController)
+//    }
+//    
     func searchbarchange(){
-        
-//        if let textfield = searchBar1.value(forKey: "searchField") as? UITextField {
-//            
-//        }
         //서치바 상하줄 없애기
         searchBar1.searchBarStyle = .minimal
         searchBar1.placeholder = "영화를 검색해 주세요"
-        searchBar1.layer.cornerRadius = 1
+        searchBar1.layer.cornerRadius = 20
         searchBar1.layer.borderColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1).cgColor
-        searchBar1.layer.borderWidth = 1
-        
+        searchBar1.layer.borderWidth = 4
     }
     
-   
-
+    
 }
     
 
