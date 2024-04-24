@@ -120,7 +120,6 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
         name.delegate = self
         phoneNum.delegate = self
         nickname.delegate = self
-        
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
@@ -142,10 +141,45 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
             print("Error textField")
         }
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case id:
+            if id.text == ""{
+                id.text = "아이디"
+            }
+        case pass:
+            if pass.text == ""{
+                pass.text = "비밀번호"
+                conformPass.isSecureTextEntry = false
+            }
+        case conformPass:
+            if conformPass.text == ""{
+                conformPass.text = "비밀번호 확인"
+                conformPass.isSecureTextEntry = false
+            }
+        case name:
+            if name.text == ""{
+                name.text = "이름"
+            }
+        case phoneNum:
+            if phoneNum.text == ""{
+                phoneNum.text = "전화번호"
+            }
+        case nickname:
+            if nickname.text == ""{
+                nickname.text = "닉네임"
+            }
+        default:
+            print("Error textField")
+        }
+        
+        
+    }
+    
     func formatDate(_ date: Date) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-dd" // Setting the date format
-            return dateFormatter.string(from: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd" // Setting the date format
+        return dateFormatter.string(from: date)
     }
     
     func setButton(_ button: UIButton) {

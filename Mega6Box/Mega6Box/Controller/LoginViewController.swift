@@ -63,6 +63,11 @@ class LoginViewViewController: UIViewController {
     }
     
     @IBAction func tapLoginBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "LoginDetail", bundle: nil)
+        // navigationController를 사용하여 뷰 컨트롤러를 push
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "LoginDetailController") as? LoginDetailController {
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
         
     }
 }
