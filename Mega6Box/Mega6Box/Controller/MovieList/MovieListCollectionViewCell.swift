@@ -9,7 +9,6 @@ import UIKit
 
 class MovieListCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var reservationMovie: UIButton!
+    @IBOutlet weak var posterImages: UIImageView!
     
 }
