@@ -10,12 +10,8 @@ import Kingfisher
 
 class MainMovieListViewController: UIViewController {
     
-    // Banner 컬렉션뷰
-    var movieImages: [String] = ["button-04", "button-05", "button-06", "logo-02", "roundSquare-03"]
-    var currentPage:Int = 0
-    
-    
     @IBOutlet weak var pageControl: UIPageControl!
+    
     
     
     // MARK: - LifeCycle
@@ -23,7 +19,7 @@ class MainMovieListViewController: UIViewController {
         super.viewDidLoad()
         
         pageControl.currentPage = 0
-        pageControl.numberOfPages = movieImages.count
+        pageControl.numberOfPages = 5
         
         //bannerTimer()
     }
@@ -33,18 +29,14 @@ class MainMovieListViewController: UIViewController {
 // MARK: - Banner 컬렉션뷰 구현
 extension MainMovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieImages.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BackDropCell
-        if let image = UIImage(named: movieImages[indexPath.row], in: nil, compatibleWith: nil) {
-            cell.backDropImage.image = image
-        } else {
-            // 이미지를 찾을 수 없는 경우 처리
-            cell.backDropImage.image = UIImage(named: "defaultImage")
-        }
+        
+        cell.setupMovieImages()
         return cell
     }
     
@@ -57,8 +49,6 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
     }
     
 }
-
-
 
 // MARK: -
 //extension MainMovieListViewController {

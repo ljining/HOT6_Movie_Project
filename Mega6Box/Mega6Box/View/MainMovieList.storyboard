@@ -123,7 +123,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-Dj-M1q" customClass="BannerCollectionView" customModule="Mega6Box" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="130" width="393" height="224"/>
-                                <color key="backgroundColor" red="1" green="0.57706925129999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="dw7-j4-91B"/>
                                 </constraints>
@@ -159,7 +159,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="393" height="224"/>
                                         <connections>
-                                            <outlet property="backDropImage" destination="GLl-Oy-YED" id="1ac-BX-UqH"/>
+                                            <outlet property="backDropImage" destination="GLl-Oy-YED" id="VOt-rE-JUS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
