@@ -3,7 +3,8 @@ import UIKit
 
 class MovieSearch2ViewController: UIViewController {
     
-    @IBOutlet weak var MAGA6BOXLabel2: UILabel!
+   
+    @IBOutlet weak var logoImage2: UIImageView!
     @IBOutlet weak var searchBar2: UISearchBar!
     @IBOutlet weak var imageView5: UIImageView!
     @IBOutlet weak var genreLabel: UILabel!

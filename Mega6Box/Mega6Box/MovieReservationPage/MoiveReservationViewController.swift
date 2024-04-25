@@ -20,7 +20,7 @@ class MoiveReservationViewController: UIViewController {
     @IBOutlet weak var posterimage: UIImageView!
     
     
-    //상영시간 더미데이터부분
+    //상영시간 더미데이터부분 
     let screenigtimeList = Screenigtime.data
     //날짜 더미데이터부분
     let dayList = Day.data
@@ -209,6 +209,7 @@ extension MoiveReservationViewController {
 //        print(formattedDate)
         return ("\(formattedDate)\n\(weekFormatter) ")
     }
+    
     //예매완료 알럿창
     func alertpopup(){
         let alert = UIAlertController(title: "예매가 완료되었습니다", message: nil, preferredStyle: .alert)

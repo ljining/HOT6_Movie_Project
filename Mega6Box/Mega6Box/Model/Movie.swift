@@ -12,14 +12,14 @@ struct MovieResults: Decodable {
 }
 
 struct Movie: Decodable {
-    let id: Int
-    let title: String
-    let originalTitle: String
-    let overview: String
-    let backdropPath: String
-    let releaseDate: String
-    let posterPath: String
-    let genreIds: [Int]
+    let id: Int?
+    let title: String?
+    let originalTitle: String?
+    let overview: String?
+    let backdropPath: String?
+    let releaseDate: String?
+    let posterPath: String?
+    let genreIds: [Int]?
 
     enum CodingKeys: String, CodingKey {
         case id
