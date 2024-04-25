@@ -25,6 +25,7 @@
 		9C4008CD2BD7F61000A73DE1 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4008CC2BD7F61000A73DE1 /* Credit.swift */; };
 		9CC40B1A2BD8A8D80083C211 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40B192BD8A8D80083C211 /* MovieDetail.swift */; };
 		9CC40B1C2BD8B9AF0083C211 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */; };
+		9CC40B3E2BD9398A0083C211 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40B3D2BD9398A0083C211 /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		9C4008CC2BD7F61000A73DE1 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 		9CC40B192BD8A8D80083C211 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9CC40B3D2BD9398A0083C211 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				9C3AA3992BD68AC30085206D /* MainViewController.swift */,
 				9C4008C12BD74A1700A73DE1 /* MovieDetailViewController.swift */,
 				9CC40B1B2BD8B9AF0083C211 /* ProfileViewController.swift */,
+				9CC40B3D2BD9398A0083C211 /* ProfileTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4008C42BD7510400A73DE1 /* NetworkController.swift in Sources */,
+				9CC40B3E2BD9398A0083C211 /* ProfileTableViewCell.swift in Sources */,
 				9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */,
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
 				9CC40B1A2BD8A8D80083C211 /* MovieDetail.swift in Sources */,

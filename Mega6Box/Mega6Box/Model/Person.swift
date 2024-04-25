@@ -27,12 +27,14 @@ struct Person: Decodable {
 }
 
 struct KnownFor: Decodable {
-    let backdropPath: String
+    let backdropPath: String?
     let id: Int
     let originalTitle: String?
     let overview: String
     let title: String?
-    let posterPath: String
+    let posterPath: String?
+    let name: String?
+    let releaseDate: String?
     
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -41,5 +43,7 @@ struct KnownFor: Decodable {
         case overview
         case title
         case posterPath = "poster_path"
+        case name
+        case releaseDate = "release_date"
     }
 }

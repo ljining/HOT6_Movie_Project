@@ -13,6 +13,9 @@ final class NetworkController {
     static let shared = NetworkController() //shared 이름의 정적 속성을 통해서 접근하도록
     private init() { }  //외부에서 NetworkController 클래스의 인스턴스를 생성하는 것을 막기 위해 사용
     
+    
+    //컴플리션핸들러는 비동기작업을 했을때 비동기작업이 언제 끝나는지 알수 없으니 컴플리션핸들러를 통해서 비동기 작업이 끝났구나! 알수 있어서 다음작업을 할수있게 해줍니다.
+    //지난 강의에서 사용하던 배열로 리턴했을때 배열에 값이 없는 이유가 네트워크 작업이 비동기라서 배열로 전달하기 전에 다음작업이 실행되어버려서 항상 배열에 값이 없는걸로 출력이 됐는데 컴플리션핸들러를 사용하면! 배열에 값을 알 수 있습니다! 
     // MARK: - 지금 상영중인 영화
     //https://api.themoviedb.org/3/movie/now_playing?api_key=d3997ec594f8168a935621b953f7712b&language=ko-ko&region=KR&page=1
     func fetchMovieNowPlaying(apiKey: String, language: String, region: String, page: Int, completion: @escaping (Result<[Movie], Error>) -> Void) {
@@ -40,7 +43,7 @@ final class NetworkController {
                     // JSON 응답을 MovieResults 구조체로 디코딩
                     let movieResults = try decoder.decode(MovieResults.self, from: data)
                     // 디코딩된 결과를 completion 핸들러에 전달
-                    completion(.success(movieResults.results))
+                    completion(.success(movieResults.results))  //컴플리션 여기부분이 아까보신 중괄호 안에 들어가는 내용, 구조체를 전\달해 줍니다.
                 } catch {
                     completion(.failure(error))
                 }
@@ -148,7 +151,7 @@ final class NetworkController {
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    // JSON 응답을 MovieResults 구조체로 디코딩
+                    // JSON 응답을 MovieResults 구조체로 디코딩, 구조체에 값이 들어갑니다
                     let personResults = try decoder.decode(PersonResults.self, from: data)
                     // 디코딩된 결과를 completion 핸들러에 전달
                     completion(.success(personResults.results))
