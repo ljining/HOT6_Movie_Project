@@ -12,4 +12,5 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var reservationMovie: UIButton!
     
+    
 }

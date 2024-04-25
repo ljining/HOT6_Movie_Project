@@ -101,7 +101,7 @@ final class NetworkController {
         print("url: \(url)")
         
         //3. 작업 만들기
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             // 에러 처리
             if let error = error {
                 completion(.failure(error))
@@ -112,10 +112,12 @@ final class NetworkController {
                 do {
                     let decoder = JSONDecoder()
                     // JSON 응답을 MovieResults 구조체로 디코딩
-                    let movieResults = try decoder.decode(MovieResults.self, from: data)
+                    print("/n \(data) /n" )
+                    let movieResults = try decoder.decode(Movie.self, from: data)
                     // 디코딩된 결과를 completion 핸들러에 전달
-                    completion(.success(movieResults.results))
+                    completion(.success([movieResults]))
                 } catch {
+                    print("Decoding error: \(error.localizedDescription) \n")
                     completion(.failure(error))
                 }
             }

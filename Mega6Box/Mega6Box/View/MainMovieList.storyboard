@@ -162,6 +162,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="393" height="224"/>
+                                        <connections>
+                                            <outlet property="image" destination="GLl-Oy-YED" id="Uns-gS-UfM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

@@ -13,7 +13,7 @@ class MainMovieListViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
 //    @IBOutlet weak var backDropImage: UIImageView!
     
-    var poster: [Movie] = []
+    var poster: [String] = []
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -31,13 +31,13 @@ class MainMovieListViewController: UIViewController {
 extension MainMovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return poster.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BackDropCell
-        
+        cell.setUpImage(input: poster[indexPath.row])
         //setupMovieImages()
         return cell
     }
@@ -58,6 +58,11 @@ extension MainMovieListViewController {
         NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
             switch result {
             case .success(let banner):
+                print(banner[0].backdropPath!)
+                var x = banner[0].backdropPath!
+                let imageURL = "\(MovieApi.imageUrl)\(x)"
+                self.poster = [imageURL]
+                
                 print("배너 가져오기 성공")
             case .failure(let error):
                 print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
