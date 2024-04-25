@@ -49,8 +49,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="아이디/비밀번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbJ-DZ-net">
-                                <rect key="frame" x="40" y="384" width="263" height="20.333333333333314"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="아이디/비밀번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbJ-DZ-net">
+                                <rect key="frame" x="35" y="406.66666666666669" width="263" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,12 +66,19 @@
                                     <action selector="tapLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNE-6m-sKk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="□ 자동 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-gg-3X1">
+                                <rect key="frame" x="35" y="379" width="133" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="AA2-iF-GgI"/>
-                            <constraint firstItem="HbJ-DZ-net" firstAttribute="top" secondItem="dO2-js-Jaf" secondAttribute="bottom" constant="7.3333333333333144" id="UaW-nE-U7f"/>
+                            <constraint firstItem="HbJ-DZ-net" firstAttribute="top" secondItem="dO2-js-Jaf" secondAttribute="bottom" constant="30" id="UaW-nE-U7f"/>
                             <constraint firstItem="d9m-HW-ITg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="XsA-Ps-b2h"/>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="top" secondItem="Ej2-Pa-1M9" secondAttribute="bottom" constant="15" id="YNF-Eu-aJN"/>
                             <constraint firstItem="HbJ-DZ-net" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="ZbC-Vl-1HW"/>
@@ -84,6 +91,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoLogin" destination="JYJ-gg-3X1" id="myL-ev-9K2"/>
                         <outlet property="id" destination="Ej2-Pa-1M9" id="KOf-YF-HHG"/>
                         <outlet property="label" destination="HbJ-DZ-net" id="AgF-UX-IJ5"/>
                         <outlet property="login" destination="An7-Pm-nbe" id="YXM-qj-zrD"/>
@@ -104,7 +112,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

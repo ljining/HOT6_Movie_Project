@@ -9,6 +9,10 @@ import UIKit
 
 class LoginDetailController: UIViewController, UITextFieldDelegate {
     
+    var flag = false;
+    
+    @IBOutlet weak var autoLogin: UILabel!
+    
     @IBOutlet weak var id: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -23,6 +27,10 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
         setTextField(password)
         setTextFieldDelegate()
         setButton(login)
+        
+        autoLogin.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labeltap))
+        autoLogin.addGestureRecognizer(tapGesture)
     }
     
     func setTextField(_ textField : UITextField){
@@ -110,6 +118,17 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }
-        
+    }
+    
+    @objc func labeltap(){
+        if(flag){
+            autoLogin.text = "□ 자동 로그인"
+            autoLogin.textColor = UIColor.black
+            flag = false
+        }else{
+            autoLogin.text = "☑︎ 자동 로그인"
+            autoLogin.textColor = UIColor.blue
+            flag = true
+        }
     }
 }
