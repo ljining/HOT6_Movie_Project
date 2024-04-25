@@ -15,6 +15,8 @@
 		9A3933232BD8CBC4001BEFD3 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */; };
 		9A3933252BD8D201001BEFD3 /* myPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3933242BD8D201001BEFD3 /* myPageCell.swift */; };
 		9A4F58212BD884FD002EB02B /* LoginDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */; };
+		9A59F7BB2BDA51F300798DCD /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A59F7BA2BDA51F300798DCD /* SearchView.storyboard */; };
+		9A59F7BD2BDA527F00798DCD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59F7BC2BDA527F00798DCD /* SearchViewController.swift */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
 		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
 		9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */; };
@@ -38,6 +40,8 @@
 		9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9A3933242BD8D201001BEFD3 /* myPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageCell.swift; sourceTree = "<group>"; };
 		9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginDetail.storyboard; sourceTree = "<group>"; };
+		9A59F7BA2BDA51F300798DCD /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
+		9A59F7BC2BDA527F00798DCD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9A909F1F2BD749A60064A813 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignViewController.swift; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 				9A2546642BD7A74E00C83DC3 /* Assign.storyboard */,
 				9A4F58202BD884FD002EB02B /* LoginDetail.storyboard */,
 				9A3933202BD8AEAD001BEFD3 /* myPage.storyboard */,
+				9A59F7BA2BDA51F300798DCD /* SearchView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */,
 				9A39331C2BD88A1E001BEFD3 /* LoginDetailController.swift */,
 				9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */,
+				9A59F7BC2BDA527F00798DCD /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				9C3AA3A22BD68AC40085206D /* Assets.xcassets in Resources */,
 				9C3AA3A52BD68AC40085206D /* Base in Resources */,
 				9A2546652BD7A74E00C83DC3 /* Assign.storyboard in Resources */,
+				9A59F7BB2BDA51F300798DCD /* SearchView.storyboard in Resources */,
 				9C3AA39D2BD68AC30085206D /* Base in Resources */,
 				9A3933212BD8AEAD001BEFD3 /* myPage.storyboard in Resources */,
 			);
@@ -221,6 +228,7 @@
 				9C3AA3B42BD6CAA20085206D /* Constants.swift in Sources */,
 				9A3933252BD8D201001BEFD3 /* myPageCell.swift in Sources */,
 				9A209ABE2BD7723D00E876EB /* UserSettings.swift in Sources */,
+				9A59F7BD2BDA527F00798DCD /* SearchViewController.swift in Sources */,
 				9C3AA3982BD68AC30085206D /* SceneDelegate.swift in Sources */,
 				9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */,
 				9A3933232BD8CBC4001BEFD3 /* MyPageViewController.swift in Sources */,
