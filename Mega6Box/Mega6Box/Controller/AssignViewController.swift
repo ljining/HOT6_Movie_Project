@@ -86,6 +86,7 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
         print(UserSettings.shared.nickName ?? "없음")
         
         //예외처리 추가
+        //귀찮으니까 pass
         
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         // navigationController를 사용하여 뷰 컨트롤러를 push
@@ -150,7 +151,7 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
         case pass:
             if pass.text == ""{
                 pass.text = "비밀번호"
-                conformPass.isSecureTextEntry = false
+                pass.isSecureTextEntry = false
             }
         case conformPass:
             if conformPass.text == ""{

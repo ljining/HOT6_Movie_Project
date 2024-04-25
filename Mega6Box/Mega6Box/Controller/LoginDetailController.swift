@@ -9,7 +9,10 @@ import UIKit
 
 class LoginDetailController: UIViewController, UITextFieldDelegate {
     
+    //자동로그인 체크박스 flag
     var flag = false;
+    //자동로그인 기능 flag
+    static var flag2 = false;
     
     @IBOutlet weak var autoLogin: UILabel!
     
@@ -27,6 +30,9 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
         setTextField(password)
         setTextFieldDelegate()
         setButton(login)
+        if(LoginDetailController.flag2){
+            moveNext()
+        }
         
         autoLogin.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labeltap))
@@ -55,7 +61,7 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-    
+        
         switch textField {
         case id:
             id.textColor = UIColor.black
@@ -87,6 +93,13 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
             print("Error textField")
         }
     }
+    func moveNext() {
+        // navigationController를 사용하여 뷰 컨트롤러를 push
+        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as?  MyPageViewController {
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
     func setButton(_ button: UIButton) {
         // 모서리 둥글게 설정
         button.layer.cornerRadius = 10 // 모서리의 둥근 정도를 설정합니다. 필요에 따라 이 값을 조정하세요.
@@ -101,22 +114,20 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
         // 버튼의 글씨 폰트 설정 (옵션)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
     }
-        
+    
     @IBAction func tapLogin(_ sender: Any) {
         
         if UserSettings.shared.userID == id.text && UserSettings.shared.password == password.text{
             // 다음 스토리보드 이동
-            
-            label.isHidden = false
+            label.isHidden = true
             label.text = "로그인 성공"
+            if(flag){
+                LoginDetailController.flag2 = true
+            }
+            moveNext()
         }else{
             label.isHidden = false
             
-            let storyboard = UIStoryboard(name: "myPage", bundle: nil)
-            // navigationController를 사용하여 뷰 컨트롤러를 push
-            if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
         }
     }
     
@@ -127,7 +138,7 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
             flag = false
         }else{
             autoLogin.text = "☑︎ 자동 로그인"
-            autoLogin.textColor = UIColor.blue
+            //autoLogin.textColor = UIColor.blue
             flag = true
         }
     }
