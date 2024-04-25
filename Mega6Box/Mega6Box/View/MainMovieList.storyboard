@@ -120,6 +120,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="aVE-2D-E1Z"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Xmj-ts-4d8"/>
+                                </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-Dj-M1q" customClass="BannerCollectionView" customModule="Mega6Box" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="130" width="393" height="224"/>
@@ -158,9 +162,6 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="393" height="224"/>
-                                        <connections>
-                                            <outlet property="backDropImage" destination="GLl-Oy-YED" id="VOt-rE-JUS"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -245,6 +246,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backDropImage" destination="GLl-Oy-YED" id="Z3N-ch-hLh"/>
                         <outlet property="pageControl" destination="8rg-ER-ZU2" id="eYj-cb-3hy"/>
                     </connections>
                 </viewController>

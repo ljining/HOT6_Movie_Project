@@ -11,8 +11,9 @@ import Kingfisher
 class MainMovieListViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var backDropImage: UIImageView!
     
-    
+    var poster: [Movie] = []
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class MainMovieListViewController: UIViewController {
 
 // MARK: - Banner 컬렉션뷰 구현
 extension MainMovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -36,7 +38,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BackDropCell
         
-        cell.setupMovieImages()
+        setupMovieImages()
         return cell
     }
     
@@ -48,6 +50,33 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         return collectionView.bounds.size
     }
     
+}
+
+// MARK: -
+extension MainMovieListViewController {
+    func setupMovieImages() {
+        NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
+            switch result {
+            case .success(let banner):
+                self.poster = Array(banner.prefix(5))
+                
+                
+                DispatchQueue.main.async {
+                    // 배열 안의 각 이미지 URL을 사용하여 배너 이미지를 설정합니다.
+                    for posterImage in self.poster {
+                        let backdropPath = posterImage.backdropPath
+                           let imageURL = URL(string: "\(MovieApi.imageUrl)\(backdropPath)")
+                            // Kingfisher를 사용하여 이미지를 비동기적으로 설정합니다.
+                        self.backDropImage.kf.setImage(with: imageURL)
+                    }
+                }
+                
+            case .failure(let error):
+                print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
+                
+            }
+        }
+    }
 }
 
 // MARK: -
