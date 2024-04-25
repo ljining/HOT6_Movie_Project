@@ -43,6 +43,7 @@ class MoiveReservationViewController: UIViewController {
         self.topcollectionView.dataSource = self
         nibcell()
         setbuttonUI()
+
     }
     
    
@@ -65,8 +66,7 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
         if collectionView == topcollectionView {
             //예약데이 더미데이터 받아오는부분
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: topCellReuseIdentifier , for: indexPath) as! DateCell
-            let date = dayList[indexPath.row]
-            cell.dateLabel.text = date.date
+            cell.dateLabel.text = weekfunc(input: indexPath.row)//텍스트 라벨에 넣어야함
             return cell
         } else {
             //상영시간 더미데이터 받아오는부분
@@ -104,8 +104,7 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
     //클릭된 셀 활성화 보여주기
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == topcollectionView {
-            let selectedDate = dayList[indexPath.item]
-            print("Selected date: \(selectedDate)")
+//            let selectedDate = dayList[indexPath.item]
             let cell = collectionView.cellForItem(at: indexPath) as! DateCell
             if cell.clickCount == 1 {
                 cell.clickCount = 0
@@ -163,6 +162,7 @@ extension MoiveReservationViewController {
     //예매하기 버튼 누르면 코어데이터 저장
     @IBAction func reservationbutton(_ sender: UIButton) {
         reservationCreate()
+        alertpopup()
     }
     
     //코어데이터부분 예매날짜,예매인원부분
@@ -170,6 +170,7 @@ extension MoiveReservationViewController {
         let context = ContainerManager.shared.persistentContainer.viewContext
         let newMega6box = Mega6Box(context: context)
         newMega6box.personnel = Int16(personnelInt)
+        newMega6box.date = Date()
         print(personnelInt)
     }
     //코어데이터 저장값 확인하기 테스트버튼
@@ -183,10 +184,38 @@ extension MoiveReservationViewController {
             do {
                 let mega6Boxes = try context.fetch(fetchRequest)
                 for mega6Box in mega6Boxes {
-                    print("Personnel: \(mega6Box.personnel)")
+                    print("Personnel: \(mega6Box.personnel) \(String(describing: mega6Box.date))")
                 }
             } catch {
                 print("Failed to fetch Mega6Boxes: \(error)")
             }
         }
+    //숫자를 넣고 스트링값으로 반환하는것
+    func weekfunc(input :Int) -> String {
+        //오늘 날자의 데이터값 가져오는거 시간에대한 정보를 저장
+        let now = Date() //Data() init메소드 == Date.now
+        let calendar = Calendar.current //현재 캘린더 가져와줘 인스턴스로
+//        let week = calendar.component(.weekday, from: now)//지금 현재 주를 반환
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR") //필요한 데이터 커스텀부분 한국어
+        dateFormatter.dateFormat = "MM dd" // 월일만요구하기
+        
+        let tomorrow = Calendar.current.date(byAdding: .day, value: input, to: now)
+        let formattedDate = dateFormatter.string(from: tomorrow!)
+        let retunrweek = calendar.component(.weekday, from: tomorrow!)
+        let weekFormatter = dateFormatter.weekdaySymbols[retunrweek - 1]//0은일요일미국식 -1 하는이유는 한국식으로 요일표시
+//        print(weekFormatter)
+//        print(formattedDate)
+        return ("\(formattedDate)\n\(weekFormatter) ")
+    }
+    //예매완료 알럿창
+    func alertpopup(){
+        let alert = UIAlertController(title: "예매가 완료되었습니다", message: nil, preferredStyle: .alert)
+        let okalert = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okalert)
+        present(alert, animated: true)
+    }
 }
+
+

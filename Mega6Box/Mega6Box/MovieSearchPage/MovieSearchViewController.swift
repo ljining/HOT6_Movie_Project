@@ -21,16 +21,20 @@ class MovieSearchViewController: UIViewController {
 }
 
 extension MovieSearchViewController {
-    
-    
-//    func getplaymoivedata() {
-//        NetworkController.shared.fetchMovieNowPlaying(apiKey: <#T##String#>, language: <#T##String#>, region: <#T##String#>, page: <#T##Int#>, completion: <#T##(Result<[Movie], Error>) -> Void#>)
+   
+////    func moivesearch(_ movieTitle: String) {
+////        NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) {
+////            result in {
+////                switch result {
+////                case .success(let movie):
+////                    print("검색 영화: ")
+////                    guard let moivesearch = URL
+////                }
+////            }
+////        }
 //    }
     
-//    func setupSearchController() {
-//        let searchController = UISearchController(searchResultsController: UIStoryboard(name: "MovieSearch2VC", bundle: nil).instantiateInitialViewController(withIdentifier:"MovieSearch2ViewController") as! MovieSearch2ViewController)
-//    }
-//    
+      
     func searchbarchange(){
         //서치바 상하줄 없애기
         searchBar1.searchBarStyle = .minimal

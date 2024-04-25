@@ -1,6 +1,8 @@
 
 import Foundation
 
+
+
 struct Screenigtime {
     let time: String
     let seat: String
@@ -24,51 +26,16 @@ extension Screenigtime {
 struct Day {
     let date: String
 }
-
+//엔티티 > 속성 > 앱델리게잇에서 스택을 구현하고 > 컨텐트를 만들어서(사용할때만-인스턴스로만들어짐) > 컨텐트안에 내용을 넣어야함 >
 extension Day {
     static var data = [
-    Day(date: "22\n오늘"),
-    Day(date: "23\n수"),
-    Day(date: "24\n목"),
-    Day(date: "25\n금"),
-    Day(date: "26\n토"),
+    Day(date: "1"),
+    Day(date: "2"),
+    Day(date: "3"),
+    Day(date: "4"),
+    Day(date: "5"),
     ]
-    //엔티티 > 속성 > 앱델리게잇에서 스택을 구현하고 > 컨텐트를 만들어서(사용할때만-인스턴스로만들어짐) > 컨텐트안에 내용을 넣어야함 >
+   
 }
-
-
-
-//struct Date {
-//    let year: Int
-//    let month: Int
-//    let day: Int
-//    
-//    init(year: Int, month: Int, day: Int) {
-//        self.year = year
-//        self.month = month
-//        self.day = day
-//    }
-//}
-//
-//struct Day {
-//    let date: Date
-//    
-//    init(date: Date) {
-//        self.date = date
-//    }
-//}
-//
-//extension Day {
-//    static var days: [Day] {
-//        var days: [Day] = []
-//        
-//        for day in 22...26 {
-//            let date = Date(year: 2024, month: 4, day: day)
-//            days.append(Day(date: date))
-//        }
-//        
-//        return days
-//    }
-//}
 
 

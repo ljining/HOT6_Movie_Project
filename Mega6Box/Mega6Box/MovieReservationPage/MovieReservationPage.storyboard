@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-XQ-z0R" userLabel="topCollection View">
-                                <rect key="frame" x="13" y="478" width="366" height="72"/>
+                                <rect key="frame" x="13" y="458" width="366" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="2" minimumInteritemSpacing="5" id="1dG-on-Qtt">
                                     <size key="itemSize" width="65" height="65"/>
@@ -186,7 +186,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DFR-Jo-27l" secondAttribute="trailing" constant="57" id="hwv-fY-zSU"/>
                             <constraint firstItem="fiD-8o-94p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="22" id="oZO-Ps-9qG"/>
                             <constraint firstItem="DFR-Jo-27l" firstAttribute="top" secondItem="8DT-Bt-gR2" secondAttribute="bottom" constant="27.670000000000002" id="pem-KF-OXk"/>
-                            <constraint firstItem="Rra-XQ-z0R" firstAttribute="top" secondItem="3rd-xV-pjG" secondAttribute="bottom" constant="195" id="rf7-dS-9gQ"/>
+                            <constraint firstItem="Rra-XQ-z0R" firstAttribute="top" secondItem="3rd-xV-pjG" secondAttribute="bottom" constant="175" id="rf7-dS-9gQ"/>
                             <constraint firstItem="V8C-9o-f0f" firstAttribute="leading" secondItem="fiD-8o-94p" secondAttribute="trailing" constant="21" id="rzO-JP-f0P"/>
                             <constraint firstItem="Db1-7c-mMh" firstAttribute="top" secondItem="fiD-8o-94p" secondAttribute="bottom" constant="35" id="uuM-fQ-FRK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8DT-Bt-gR2" secondAttribute="trailing" constant="14" id="zE5-WJ-yEa"/>
