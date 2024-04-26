@@ -108,10 +108,13 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.19881014899999999" blue="0.87674288460000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLQ-JY-PKl">
+                                                    <rect key="frame" x="0.0" y="136" width="133" height="75"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-Sy-hmB">
-                                                    <rect key="frame" x="13" y="162" width="106" height="34"/>
+                                                    <rect key="frame" x="13" y="169" width="106" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="DwI-vt-6p5"/>
+                                                        <constraint firstAttribute="height" constant="29" id="DwI-vt-6p5"/>
                                                         <constraint firstAttribute="width" constant="106" id="dqR-TQ-zTh"/>
                                                     </constraints>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,21 +135,28 @@
                                                             <fragment content="예매하기">
                                                                 <attributes>
                                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <font key="NSFont" size="15" name="AppleSDGothicNeo-Bold"/>
+                                                                    <font key="NSFont" size="12" name="AppleSDGothicNeo-Bold"/>
                                                                     <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
+                                                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="QLQ-JY-PKl" secondAttribute="bottom" constant="16" id="6ma-A4-sjr"/>
+                                                <constraint firstItem="QLQ-JY-PKl" firstAttribute="trailing" secondItem="DWX-mr-CUX" secondAttribute="trailing" id="8P8-sc-E27"/>
+                                                <constraint firstItem="QLQ-JY-PKl" firstAttribute="leading" secondItem="so9-Ia-waW" secondAttribute="leading" id="BaG-9P-Eep"/>
+                                                <constraint firstItem="QLQ-JY-PKl" firstAttribute="top" secondItem="so9-Ia-waW" secondAttribute="top" constant="136" id="DzD-mr-0OO"/>
                                                 <constraint firstItem="IUO-Sy-hmB" firstAttribute="leading" secondItem="DWX-mr-CUX" secondAttribute="leading" constant="13" id="W25-vS-EkQ"/>
-                                                <constraint firstItem="IUO-Sy-hmB" firstAttribute="bottom" secondItem="DWX-mr-CUX" secondAttribute="bottom" constant="-8" id="lYA-CG-ebt"/>
+                                                <constraint firstItem="IUO-Sy-hmB" firstAttribute="bottom" secondItem="DWX-mr-CUX" secondAttribute="bottom" constant="-6" id="lYA-CG-ebt"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="393" height="227"/>
                                         <connections>
+                                            <outlet property="gradient" destination="QLQ-JY-PKl" id="6mo-51-rFG"/>
                                             <outlet property="posterImages" destination="DWX-mr-CUX" id="oxg-aY-RVr"/>
                                         </connections>
                                     </collectionViewCell>
