@@ -43,6 +43,7 @@
 		9A84E9022BDB464400271441 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E8F82BDB464400271441 /* MovieSearchViewController.swift */; };
 		9A84E9132BDB4ADE00271441 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9122BDB4ADE00271441 /* Movie.swift */; };
 		9A84E9152BDB4BB600271441 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9142BDB4BB600271441 /* NetworkController.swift */; };
+		9A84E91B2BDBBB3000271441 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A84E91A2BDBBB3000271441 /* Kingfisher */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
 		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
 		9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */; };
@@ -112,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A84E91B2BDBBB3000271441 /* Kingfisher in Frameworks */,
 				9A67DF902BDA9EC700332109 /* Kingfisher in Frameworks */,
 				9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */,
 			);
@@ -290,6 +292,7 @@
 			packageProductDependencies = (
 				9A95FB122BD7D506002F4F36 /* Kingfisher */,
 				9A67DF8F2BDA9EC700332109 /* Kingfisher */,
+				9A84E91A2BDBBB3000271441 /* Kingfisher */,
 			);
 			productName = Mega6Box;
 			productReference = 9C3AA3922BD68AC30085206D /* Mega6Box.app */;
@@ -636,6 +639,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		9A67DF8F2BDA9EC700332109 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A95FB112BD7D506002F4F36 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		9A84E91A2BDBBB3000271441 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9A95FB112BD7D506002F4F36 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

@@ -18,6 +18,7 @@ class MainMovieListViewController: UIViewController {
     
     var banners: [String] = []
     var posters: [String] = []
+    var postersID: [Int] = []
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -63,6 +64,8 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         } else {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieListCell", for: indexPath) as! MovieListCollectionViewCell
             cell2.setUpPoster(input: posters[indexPath.row])
+            cell2.id = postersID[indexPath.row]
+            cell2.viewController = self
             return cell2
         }
     }
@@ -112,6 +115,10 @@ extension MainMovieListViewController {
                     if let bannerImagePath = image.backdropPath,
                        let url = URL(string: "\(MovieApi.imageUrl)\(bannerImagePath)") {
                         self.banners += [url.absoluteString]
+                    }
+                    if let id = image.id {
+                        
+                        self.postersID += [id]
                     }
                 }
                 

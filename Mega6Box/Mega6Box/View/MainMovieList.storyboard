@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -83,6 +83,9 @@
                                                             </fragment>
                                                         </attributedString>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="tapVoteBtn:" destination="ijF-z5-YX1" eventType="touchUpInside" id="zT5-Aj-sKK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -93,6 +96,7 @@
                                         <size key="customSize" width="393" height="212"/>
                                         <connections>
                                             <outlet property="posterImages" destination="DWX-mr-CUX" id="oxg-aY-RVr"/>
+                                            <outlet property="voteBtn" destination="IUO-Sy-hmB" id="tQm-GS-zBQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
