@@ -38,7 +38,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             return banners.count
         } else if collectionView == posterCollectionView {
-            return 4
+            return 5
         }
         return 0
     }
@@ -70,22 +70,26 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             return collectionView.bounds.size
         } else {
-            return collectionView.bounds.size
+            let width: CGFloat = 133
+            let height: CGFloat = 212
+            return CGSize(width: width, height: height )
         }
-    }
-    
-    fileprivate var interitemSpace: CGFloat {
-        return 0.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == bannerCollectionView {
             return 0.0
         } else if collectionView == posterCollectionView {
-            return interitemSpace
+            return 0.0
         }
         return 0.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            // 위아래 여백 설정
+            let verticalSpacing: CGFloat = 0.0
+            return UIEdgeInsets(top: verticalSpacing, left: 0, bottom: verticalSpacing, right: 0)
+        }
 }
 
 // MARK: - 이미지 요청
