@@ -15,22 +15,35 @@ struct PersonResults: Decodable {
 struct Person: Decodable {
     let id: Int
     let name: String
-    let profilePath: String
+    let profilePath: String?
     let knownFor: [KnownFor]
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case profilePath = "profile_path"
+        case knownFor = "known_for"
+    }
 }
 
 struct KnownFor: Decodable {
-    let backdropPath: String
+    let backdropPath: String?
     let id: Int
-    let originalTitle: String
-    let overView: String
-    let posterPath: String
+    let originalTitle: String?
+    let overview: String
+    let title: String?
+    let posterPath: String?
+    let name: String?
+    let releaseDate: String?
     
     enum CodingKeys: String, CodingKey {
-        case backdropPath
+        case backdropPath = "backdrop_path"
         case id
         case originalTitle = "original_title"
-        case overView
+        case overview
+        case title
         case posterPath = "poster_path"
+        case name
+        case releaseDate = "release_date"
     }
 }

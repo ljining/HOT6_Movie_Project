@@ -95,11 +95,12 @@ extension MainMovieListViewController {
         NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
             switch result {
             case .success(let banner):
-                print(banner[0].backdropPath!)
-                let x = banner[0].backdropPath!
-                let imageURL = "\(MovieApi.imageUrl)\(x)"
-                self.banners = [imageURL]
-                
+                break
+//                print(banner[0].backdropPath!)
+//                let x = banner[0].backdropPath!
+//                let imageURL = "\(MovieApi.imageUrl)\(x)"
+//                self.banners = [imageURL]
+//                
                 print("배너 이미지 가져오기 성공")
             case .failure(let error):
                 print("배너 이미지를 가져오는 데 실패했습니다: \(error)")

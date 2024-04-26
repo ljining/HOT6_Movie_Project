@@ -15,8 +15,13 @@ struct PersonImage: Decodable {
 
 struct Profiles: Decodable {
     let filePath: String
+    let height: Int
+    let width: Int
     
     enum CodingKeys: String, CodingKey {
         case filePath = "file_path"
+        case height
+        case width
     }
 }
+
