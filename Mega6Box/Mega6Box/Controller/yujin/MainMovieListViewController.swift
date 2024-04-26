@@ -82,7 +82,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
             return collectionView.bounds.size
         } else {
             let width: CGFloat = 135
-            let height: CGFloat = 200
+            let height: CGFloat = 230
             return CGSize(width: width, height: height )
         }
     }
