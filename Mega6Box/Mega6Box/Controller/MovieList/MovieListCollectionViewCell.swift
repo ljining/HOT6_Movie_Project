@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var posterImages: UIImageView!
     
+    func setPoster(with imageURL: URL) {
+        self.posterImages.kf.setImage(with: imageURL)
+    }
 }

@@ -11,13 +11,13 @@ import Kingfisher
 class MainMovieListViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
-
+    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
     
     var banners: [String] = []
-    //var posters: [String] = []
+    var posters: [String] = []
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -51,12 +51,19 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
             return cell
         } else {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieListCell", for: indexPath) as! MovieListCollectionViewCell
+            
             return cell2
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageControl.currentPage = indexPath.row
+        if collectionView == bannerCollectionView {
+            pageControl.currentPage = indexPath.row
+        } else if collectionView == posterCollectionView {
+            cell.layer.cornerRadius = 25
+            cell.layer.masksToBounds = true
+        }
+        return print("")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -67,10 +74,23 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         }
     }
     
+    fileprivate var interitemSpace: CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == bannerCollectionView {
+            return 0.0
+        } else if collectionView == posterCollectionView {
+            return interitemSpace
+        }
+        return 0.0
+    }
 }
 
-// MARK: -
+// MARK: - 이미지 요청
 extension MainMovieListViewController {
+    
     func setupMovieImages() {
         NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
             switch result {
@@ -80,10 +100,26 @@ extension MainMovieListViewController {
                 let imageURL = "\(MovieApi.imageUrl)\(x)"
                 self.banners = [imageURL]
                 
-                print("배너 가져오기 성공")
+                print("배너 이미지 가져오기 성공")
             case .failure(let error):
                 print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
                 
+            }
+        }
+    }
+    
+    func setupPosterImages(_ movieTitle: String) {
+        NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
+            switch result {
+            case .success(let poster):
+                print(poster[0].!)
+                let x = poster[0].posterPath
+                let imageURL = "\(MovieApi.imageUrl)\(x)"
+                self.posters = [imageURL]
+                print("포스터 가져오기 성공")
+                
+            case .failure(let error):
+                print("포스터 이미지 가져오기 실패: \(error)")
             }
         }
     }
