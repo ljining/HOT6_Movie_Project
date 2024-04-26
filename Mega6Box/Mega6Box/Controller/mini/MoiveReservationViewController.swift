@@ -19,6 +19,7 @@ class MoiveReservationViewController: UIViewController {
     @IBOutlet weak var reservationbutton: UIButton!
     @IBOutlet weak var posterimage: UIImageView!
     
+    //test
     
     //상영시간 더미데이터부분 
     let screenigtimeList = Screenigtime.data
