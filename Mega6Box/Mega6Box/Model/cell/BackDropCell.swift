@@ -13,7 +13,6 @@ class BackDropCell: UICollectionViewCell {
     @IBOutlet weak var backDropImage: UIImageView!
     
     func setUpImage(input: String) {
-        
         guard let url = URL(string: input) else {
             print("")
             return

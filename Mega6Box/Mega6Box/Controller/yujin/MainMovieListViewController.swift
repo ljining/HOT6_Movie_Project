@@ -25,7 +25,8 @@ class MainMovieListViewController: UIViewController {
         
         pageControl.currentPage = 0
         pageControl.numberOfPages = 5
-        setupMovieImages()
+        setupMovieImages(1)
+        setupPosterImages(1)
         //bannerTimer()
         
         let layout =  UICollectionViewFlowLayout()
@@ -33,10 +34,10 @@ class MainMovieListViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 14
         layout.minimumLineSpacing = 14 // 한 줄 내에서의 셀 간격
-
+        
         
         posterCollectionView.collectionViewLayout = layout
-
+        
     }
     
 }
@@ -48,7 +49,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             return banners.count
         } else if collectionView == posterCollectionView {
-            return 5
+            return posters.count
         }
         return 0
     }
@@ -61,7 +62,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
             return cell
         } else {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieListCell", for: indexPath) as! MovieListCollectionViewCell
-            
+            cell2.setUpPoster(input: posters[indexPath.row])
             return cell2
         }
     }
@@ -80,8 +81,8 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             return collectionView.bounds.size
         } else {
-            let width: CGFloat = 133
-            let height: CGFloat = 212
+            let width: CGFloat = 135
+            let height: CGFloat = 200
             return CGSize(width: width, height: height )
         }
     }
@@ -99,37 +100,52 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
 // MARK: - 이미지 요청
 extension MainMovieListViewController {
     
-    func setupMovieImages() {
-        NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
+    func setupMovieImages(_ page: Int) {
+        NetworkController.shared.fetchMovieNowPlaying(apiKey: MovieApi.apiKey, language: MovieApi.language, region: MovieApi.region, page: page) { result in
             switch result {
             case .success(let banner):
-//                print(banner[0].backdropPath!)
-//                let x = banner[0].backdropPath!
-//                let imageURL = "\(MovieApi.imageUrl)\(x)"
-//                self.banners = [imageURL]
-//                
-                print("배너 이미지 가져오기 성공")
-                break
-            case .failure(let error):
-                print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
                 
+                print(banner[0])
+                
+                let image = banner[0]
+                for image in banner {
+                    if let bannerImagePath = image.backdropPath,
+                       let url = URL(string: "\(MovieApi.imageUrl)\(bannerImagePath)") {
+                        self.banners += [url.absoluteString]
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.posterCollectionView.reloadData()
+                }
+                print("포스터 가져오기 성공")
+                
+            case .failure(let error):
+                print("포스터 이미지 가져오기 실패: \(error)")
             }
         }
-    }
+}
     
-    func setupPosterImages(_ movieTitle: String) {
-        NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
+    func setupPosterImages(_ page: Int) {
+        NetworkController.shared.fetchMovieNowPlaying(apiKey: MovieApi.apiKey, language: MovieApi.language, region: MovieApi.region, page: page) { result in
             switch result {
             case .success(let poster):
                 
                 print(poster[0])
-                let posterImagePath = poster[0].posterPath
-                if let url = URL(string: "\(MovieApi.imageUrl)\(posterImagePath ?? "error")") {
-                    self.posters = [url.absoluteString]
-                    print("포스터 가져오기 성공")
-                } else {
-                    print("유효하지 않은 포스터 URL")
+                
+                let image = poster[0]
+                for image in poster {
+                    if let posterImagePath = image.posterPath,
+                       let url = URL(string: "\(MovieApi.imageUrl)\(posterImagePath)") {
+                        self.posters += [url.absoluteString]
+                    }
                 }
+                
+                DispatchQueue.main.async {
+                    self.posterCollectionView.reloadData()
+                }
+                print("포스터 가져오기 성공")
+                
             case .failure(let error):
                 print("포스터 이미지 가져오기 실패: \(error)")
             }

@@ -167,9 +167,9 @@
 				9A84E8F42BDB464400271441 /* DateCell.xib */,
 				9A84E8EE2BDB464400271441 /* MovieCell.swift */,
 				9A84E8F02BDB464400271441 /* MovieCell.xib */,
-				9A84E8B62BDB38AC00271441 /* MovieListCollectionViewCell.swift */,
 				9A3933242BD8D201001BEFD3 /* myPageCell.swift */,
 				9A84E8DD2BDB401500271441 /* ProfileTableViewCell.swift */,
+				9A84E8B62BDB38AC00271441 /* MovieListCollectionViewCell.swift */,
 				9A84E8EB2BDB428600271441 /* BackDropCell.swift */,
 			);
 			path = cell;

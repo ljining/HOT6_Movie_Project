@@ -12,7 +12,11 @@ class MovieListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var posterImages: UIImageView!
     
-    func setPoster(with imageURL: URL) {
-        self.posterImages.kf.setImage(with: imageURL)
+    func setUpPoster(input: String) {
+        guard let url = URL(string: input) else {
+            print("")
+            return
+        }
+        self.posterImages.kf.setImage(with: url)
     }
 }
