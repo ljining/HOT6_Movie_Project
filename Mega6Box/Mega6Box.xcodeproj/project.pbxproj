@@ -123,8 +123,8 @@
 		9A84E9032BDB47F700271441 /* yujin */ = {
 			isa = PBXGroup;
 			children = (
-				9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */,
 				9A84E8B32BDB388F00271441 /* MainMovieListViewController.swift */,
+				9A3933222BD8CBC4001BEFD3 /* MyPageViewController.swift */,
 			);
 			path = yujin;
 			sourceTree = "<group>";
@@ -260,9 +260,9 @@
 		9C3AA3AE2BD6C8AF0085206D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9A84E9102BDB4A1F00271441 /* mini */,
 				9A59F7BC2BDA527F00798DCD /* SearchViewController.swift */,
 				9C3AA3992BD68AC30085206D /* MainViewController.swift */,
+				9A84E9102BDB4A1F00271441 /* mini */,
 				9A84E9032BDB47F700271441 /* yujin */,
 				9A84E90D2BDB491F00271441 /* imhs */,
 				9A84E9042BDB485200271441 /* Manager */,

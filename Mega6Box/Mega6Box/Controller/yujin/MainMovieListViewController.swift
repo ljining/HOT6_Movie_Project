@@ -27,6 +27,16 @@ class MainMovieListViewController: UIViewController {
         pageControl.numberOfPages = 5
         setupMovieImages()
         //bannerTimer()
+        
+        let layout =  UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 14
+        layout.minimumLineSpacing = 14 // 한 줄 내에서의 셀 간격
+
+        
+        posterCollectionView.collectionViewLayout = layout
+
     }
     
 }
@@ -80,16 +90,10 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             return 0.0
         } else if collectionView == posterCollectionView {
-            return 0.0
+            return 10.0
         }
-        return 0.0
+        return 10.0
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            // 위아래 여백 설정
-            let verticalSpacing: CGFloat = 0.0
-            return UIEdgeInsets(top: verticalSpacing, left: 0, bottom: verticalSpacing, right: 0)
-        }
 }
 
 // MARK: - 이미지 요청
@@ -99,13 +103,13 @@ extension MainMovieListViewController {
         NetworkController.shared.fetchSearchMovieId(movieId: 838209, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
             switch result {
             case .success(let banner):
-                break
 //                print(banner[0].backdropPath!)
 //                let x = banner[0].backdropPath!
 //                let imageURL = "\(MovieApi.imageUrl)\(x)"
 //                self.banners = [imageURL]
 //                
                 print("배너 이미지 가져오기 성공")
+                break
             case .failure(let error):
                 print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
                 
@@ -116,13 +120,16 @@ extension MainMovieListViewController {
     func setupPosterImages(_ movieTitle: String) {
         NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
             switch result {
-            case .success(let poster): break
-//                print(poster[0])
-//                let x = poster[0].posterPath
-//                let imageURL = "\(MovieApi.imageUrl)\(x)"
-//                self.posters = [imageURL]
-//                print("포스터 가져오기 성공")
+            case .success(let poster):
                 
+                print(poster[0])
+                let posterImagePath = poster[0].posterPath
+                if let url = URL(string: "\(MovieApi.imageUrl)\(posterImagePath ?? "error")") {
+                    self.posters = [url.absoluteString]
+                    print("포스터 가져오기 성공")
+                } else {
+                    print("유효하지 않은 포스터 URL")
+                }
             case .failure(let error):
                 print("포스터 이미지 가져오기 실패: \(error)")
             }
