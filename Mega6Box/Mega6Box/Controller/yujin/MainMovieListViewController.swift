@@ -41,6 +41,27 @@ class MainMovieListViewController: UIViewController {
         
     }
     
+    
+    @IBAction func tapMyPageBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
+            // Setting the modal presentation style to fullscreen
+            viewController.modalPresentationStyle = .automatic
+            // Presenting the view controller modally
+            present(viewController, animated: true)
+        }
+    }
+    @IBAction func tapSettingBtn(_ sender: Any) {
+        //기능없는 페이지.
+        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
+            // Setting the modal presentation style to fullscreen
+            viewController.modalPresentationStyle = .fullScreen
+            // Presenting the view controller modally
+            present(viewController, animated: true)
+        }
+    }
+    
 }
 
 // MARK: - Banner 컬렉션뷰 구현

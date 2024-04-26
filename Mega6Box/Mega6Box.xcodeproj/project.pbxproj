@@ -43,7 +43,7 @@
 		9A84E9022BDB464400271441 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E8F82BDB464400271441 /* MovieSearchViewController.swift */; };
 		9A84E9132BDB4ADE00271441 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9122BDB4ADE00271441 /* Movie.swift */; };
 		9A84E9152BDB4BB600271441 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9142BDB4BB600271441 /* NetworkController.swift */; };
-		9A84E91B2BDBBB3000271441 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A84E91A2BDBBB3000271441 /* Kingfisher */; };
+		9A84E9172BDB4C6D00271441 /* MoveNextStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
 		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
 		9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */; };
@@ -95,6 +95,7 @@
 		9A84E90B2BDB48CB00271441 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		9A84E9122BDB4ADE00271441 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9A84E9142BDB4BB600271441 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNextStoryBoard.swift; sourceTree = "<group>"; };
 		9A909F1F2BD749A60064A813 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignViewController.swift; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +138,7 @@
 				9A84E9092BDB488D00271441 /* ContainerManager.swift */,
 				9A84E90A2BDB489400271441 /* CoreDataManager.swift */,
 				9A84E90B2BDB48CB00271441 /* NetworkController.swift */,
+				9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -385,6 +387,7 @@
 				9A84E8E12BDB401500271441 /* ProfileTableViewCell.swift in Sources */,
 				9A84E9152BDB4BB600271441 /* NetworkController.swift in Sources */,
 				9A84E8E62BDB404C00271441 /* MovieDetail.swift in Sources */,
+				9A84E9172BDB4C6D00271441 /* MoveNextStoryBoard.swift in Sources */,
 				9A59F7BD2BDA527F00798DCD /* SearchViewController.swift in Sources */,
 				9A84E8EC2BDB428600271441 /* BackDropCell.swift in Sources */,
 				9A84E8FC2BDB464400271441 /* DateCell.swift in Sources */,
