@@ -117,6 +117,7 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
     
     @IBAction func tapLogin(_ sender: Any) {
         
+        
         if UserSettings.shared.userID == id.text && UserSettings.shared.password == password.text{
             // 다음 스토리보드 이동
             label.isHidden = true
