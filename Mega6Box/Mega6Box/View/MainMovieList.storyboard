@@ -183,32 +183,43 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="93" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-vd-6hG">
                                 <rect key="frame" x="40.666666666666657" y="752" width="312" height="42"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVp-H6-aAp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVp-H6-aAp">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="kaF-Za-ZWS"/>
                                             <constraint firstAttribute="width" constant="42" id="wqC-9C-dhk"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="button-04"/>
+                                        <state key="normal" image="homekit" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1A-Ct-vuf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1A-Ct-vuf">
                                         <rect key="frame" x="135" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="2GD-q9-biI"/>
                                             <constraint firstAttribute="width" constant="42" id="BLA-ce-zFp"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="button-05"/>
+                                        <state key="normal" image="ticket" catalog="system"/>
+                                        <connections>
+                                            <action selector="tapMyPageBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qnp-0Y-chU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5B-P2-68A">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5B-P2-68A">
                                         <rect key="frame" x="270" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="8dZ-sT-9Cj"/>
                                             <constraint firstAttribute="width" constant="42" id="vTm-9r-CjQ"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="button-06"/>
+                                        <state key="normal" image="gearshape" catalog="system">
+                                            <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapSettingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vag-BH-FAZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -257,11 +268,15 @@
     </scenes>
     <resources>
         <image name="button-04" width="412.66665649414062" height="412.66665649414062"/>
-        <image name="button-05" width="413" height="412.66665649414062"/>
-        <image name="button-06" width="412.66665649414062" height="412.66665649414062"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="logo-02" width="2535.5" height="324.5"/>
         <image name="roundSquare-03" width="628.5" height="620.5"/>
         <image name="search-01" width="625" height="625"/>
+        <image name="ticket" catalog="system" width="128" height="86"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -95,9 +95,12 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
     }
     func moveNext() {
         // navigationController를 사용하여 뷰 컨트롤러를 push
-        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as?  MyPageViewController {
-            self.navigationController?.pushViewController(viewController, animated: true)
+        let storyboard = UIStoryboard(name: "MainMovieList", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MainMovieList") as? MainMovieListViewController {
+            // Setting the modal presentation style to fullscreen
+            viewController.modalPresentationStyle = .fullScreen
+            // Presenting the view controller modally
+            present(viewController, animated: true)
         }
     }
     func setButton(_ button: UIButton) {
@@ -117,7 +120,9 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
     
     @IBAction func tapLogin(_ sender: Any) {
         
-        
+        //test
+
+        //
         if UserSettings.shared.userID == id.text && UserSettings.shared.password == password.text{
             // 다음 스토리보드 이동
             label.isHidden = true

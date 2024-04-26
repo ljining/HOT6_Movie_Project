@@ -29,6 +29,27 @@ class MainMovieListViewController: UIViewController {
         //bannerTimer()
     }
     
+    
+    @IBAction func tapMyPageBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
+            // Setting the modal presentation style to fullscreen
+            viewController.modalPresentationStyle = .automatic
+            // Presenting the view controller modally
+            present(viewController, animated: true)
+        }
+    }
+    @IBAction func tapSettingBtn(_ sender: Any) {
+        //기능없는 페이지.
+        let storyboard = UIStoryboard(name: "myPage", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
+            // Setting the modal presentation style to fullscreen
+            viewController.modalPresentationStyle = .fullScreen
+            // Presenting the view controller modally
+            present(viewController, animated: true)
+        }
+    }
+    
 }
 
 // MARK: - Banner 컬렉션뷰 구현
@@ -96,11 +117,11 @@ extension MainMovieListViewController {
             switch result {
             case .success(let banner):
                 break
-//                print(banner[0].backdropPath!)
-//                let x = banner[0].backdropPath!
-//                let imageURL = "\(MovieApi.imageUrl)\(x)"
-//                self.banners = [imageURL]
-//                
+                //                print(banner[0].backdropPath!)
+                //                let x = banner[0].backdropPath!
+                //                let imageURL = "\(MovieApi.imageUrl)\(x)"
+                //                self.banners = [imageURL]
+                //
                 print("배너 이미지 가져오기 성공")
             case .failure(let error):
                 print("배너 이미지를 가져오는 데 실패했습니다: \(error)")
@@ -113,11 +134,11 @@ extension MainMovieListViewController {
         NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
             switch result {
             case .success(let poster): break
-//                print(poster[0])
-//                let x = poster[0].posterPath
-//                let imageURL = "\(MovieApi.imageUrl)\(x)"
-//                self.posters = [imageURL]
-//                print("포스터 가져오기 성공")
+                //                print(poster[0])
+                //                let x = poster[0].posterPath
+                //                let imageURL = "\(MovieApi.imageUrl)\(x)"
+                //                self.posters = [imageURL]
+                //                print("포스터 가져오기 성공")
                 
             case .failure(let error):
                 print("포스터 이미지 가져오기 실패: \(error)")
