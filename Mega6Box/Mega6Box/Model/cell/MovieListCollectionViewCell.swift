@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class MovieListCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var posterImages: UIImageView!
     
     func setUpPoster(input: String) {
@@ -18,5 +18,11 @@ class MovieListCollectionViewCell: UICollectionViewCell {
             return
         }
         self.posterImages.kf.setImage(with: url)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        self.posterImages.layer.cornerRadius = 20
     }
 }

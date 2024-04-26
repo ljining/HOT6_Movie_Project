@@ -15,9 +15,36 @@ class MainMovieListViewController: UIViewController {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
+    @IBOutlet weak var nowPlaying: UILabel!
+    
+    @IBOutlet weak var eventButton1: UIButton!
+    @IBOutlet weak var eventButton2: UIButton!
+    @IBOutlet weak var eventButton3: UIButton!
+    @IBOutlet weak var eventButton4: UIButton!
+    
+    
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var reservButton: UIButton!
+    @IBOutlet weak var myPageButton: UIButton!
     
     var banners: [String] = []
     var posters: [String] = []
+    
+    // MARK: - Button 클릭 시 화면 이동
+    
+    @IBAction func moveToSearchPage(_ sender: Any) {
+
+                let storyboard = UIStoryboard(name: "SearchView", bundle: Bundle.main)
+                   guard let reservationVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController  else {
+                       print("Could not instantiate MovieReservationViewController from storyboard.")
+                       return
+                   }
+                   self.present(reservationVC, animated: true)
+            }
+    
+    
+    
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -27,16 +54,8 @@ class MainMovieListViewController: UIViewController {
         pageControl.numberOfPages = 5
         setupMovieImages(1)
         setupPosterImages(1)
+        setupUI()
         //bannerTimer()
-        
-        let layout =  UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0)
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 14
-        layout.minimumLineSpacing = 14 // 한 줄 내에서의 셀 간격
-        
-        
-        posterCollectionView.collectionViewLayout = layout
         
     }
     
@@ -71,8 +90,10 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         if collectionView == bannerCollectionView {
             pageControl.currentPage = indexPath.row
         } else if collectionView == posterCollectionView {
-            cell.layer.cornerRadius = 25
-            cell.layer.masksToBounds = true
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+            cell.layer.shadowOpacity = 0.3
+            cell.layer.shadowRadius = 4
         }
         return print("")
     }
@@ -82,24 +103,16 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
             return collectionView.bounds.size
         } else {
             let width: CGFloat = 135
-            let height: CGFloat = 230
+            let height: CGFloat = 220
             return CGSize(width: width, height: height )
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == bannerCollectionView {
-            return 0.0
-        } else if collectionView == posterCollectionView {
-            return 10.0
-        }
-        return 10.0
     }
 }
 
 // MARK: - 이미지 요청
 extension MainMovieListViewController {
     
+    // (Top) 배너 이미지 요청
     func setupMovieImages(_ page: Int) {
         NetworkController.shared.fetchMovieNowPlaying(apiKey: MovieApi.apiKey, language: MovieApi.language, region: MovieApi.region, page: page) { result in
             switch result {
@@ -118,14 +131,14 @@ extension MainMovieListViewController {
                 DispatchQueue.main.async {
                     self.posterCollectionView.reloadData()
                 }
-                print("포스터 가져오기 성공")
+                print("배너 이미지 가져오기 성공")
                 
             case .failure(let error):
-                print("포스터 이미지 가져오기 실패: \(error)")
+                print("배너 이미지 가져오기 실패: \(error)")
             }
         }
-}
-    
+    }
+    // (Bottom) 포스터 이미지 요청
     func setupPosterImages(_ page: Int) {
         NetworkController.shared.fetchMovieNowPlaying(apiKey: MovieApi.apiKey, language: MovieApi.language, region: MovieApi.region, page: page) { result in
             switch result {
@@ -144,12 +157,71 @@ extension MainMovieListViewController {
                 DispatchQueue.main.async {
                     self.posterCollectionView.reloadData()
                 }
-                print("포스터 가져오기 성공")
+                print("포스터 이미지 가져오기 성공")
                 
             case .failure(let error):
                 print("포스터 이미지 가져오기 실패: \(error)")
             }
         }
+    }
+}
+
+// MARK: -
+extension MainMovieListViewController {
+    
+    func setupUI() {
+        // PosterCollectionView UI
+        let layout =  UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 14
+        layout.minimumLineSpacing = 14
+        posterCollectionView.collectionViewLayout = layout
+    
+        
+        // 현재 상영작 Label UI
+        nowPlaying.layer.shadowColor = UIColor.black.cgColor
+        nowPlaying.layer.shadowOffset = CGSize(width: 0, height: 2)
+        nowPlaying.layer.shadowOpacity = 0.4
+        nowPlaying.layer.shadowRadius = 4
+        
+        // EventButton UI
+        eventButton1.layer.shadowColor = UIColor.black.cgColor
+        eventButton1.layer.shadowOffset = CGSize(width: 0, height: 2)
+        eventButton1.layer.shadowOpacity = 0.4
+        eventButton1.layer.shadowRadius = 4
+        
+        eventButton2.layer.shadowColor = UIColor.black.cgColor
+        eventButton2.layer.shadowOffset = CGSize(width: 0, height: 2)
+        eventButton2.layer.shadowOpacity = 0.4
+        eventButton2.layer.shadowRadius = 4
+        
+        eventButton3.layer.shadowColor = UIColor.black.cgColor
+        eventButton3.layer.shadowOffset = CGSize(width: 0, height: 2)
+        eventButton3.layer.shadowOpacity = 0.4
+        eventButton3.layer.shadowRadius = 4
+        
+        eventButton4.layer.shadowColor = UIColor.black.cgColor
+        eventButton4.layer.shadowOffset = CGSize(width: 0, height: 2)
+        eventButton4.layer.shadowOpacity = 0.4
+        eventButton4.layer.shadowRadius = 4
+        
+        // Page Button UI
+        homeButton.layer.shadowColor = UIColor.black.cgColor
+        homeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        homeButton.layer.shadowOpacity = 0.4
+        homeButton.layer.shadowRadius = 4
+        
+        reservButton.layer.shadowColor = UIColor.black.cgColor
+        reservButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        reservButton.layer.shadowOpacity = 0.4
+        reservButton.layer.shadowRadius = 4
+        
+        myPageButton.layer.shadowColor = UIColor.black.cgColor
+        myPageButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        myPageButton.layer.shadowOpacity = 0.4
+        myPageButton.layer.shadowRadius = 4
+        
     }
 }
 
