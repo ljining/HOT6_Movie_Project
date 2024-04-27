@@ -23,20 +23,15 @@ class MoiveReservationViewController: UIViewController {
     let screenigtimeList = Screenigtime.data
     //날짜 더미데이터부분
     let dayList = Day.data
-//    let cellName = "MovieCell"
-//    let cellReuseIdentifier = "MovieCell"
     let topCellReuseIdentifier = "DateCellReuseIdentifier"
     let bottomCellReuseIdentifier = "MovieCellReuseIdentifier"
     //인원수 값 들어가있는부분
     private var personnelInt: Int = 1
    
-    
-    var tempMovieId: Int?   //이전화면에서 ID를 받아와서 할당할 변수
+    //이전화면에서 ID를 받아와서 할당할 변수
+    var tempMovieId: Int?
     var movieId: Int = 0
     
-    
-    //구현목록
-      //1.서치에서 예매버튼으로 넘어온 데이터값 받아오는거  imageView5부분이랑,genreLabel부분,moivenameLabel,releaseLabel 네가지값 와야함
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +43,10 @@ class MoiveReservationViewController: UIViewController {
         if let id = tempMovieId {
             movieId = id
         }
-        
         nibcell()
         setbuttonUI()
-        
-        getMovieData(movieId)  //영화데이터 받아오기
+        //영화데이터 받아오기
+        getMovieData(movieId)
     }
     
     // MARK: - 영화ID로 영화 데이터 받아오기
@@ -90,7 +84,7 @@ class MoiveReservationViewController: UIViewController {
     }
 }
 
-//컬렉션뷰작업
+//MARK: - 컬렉션뷰작업
 extension MoiveReservationViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //더미데이터 받아오는수대로 count
@@ -168,47 +162,9 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
     }
 }
 
-//버튼들,코어데이터부분
+//MARK: - 코어데이터부분
 extension MoiveReservationViewController {
-    //버튼 수정부분
-    func setbuttonUI() {
-        refreshTextLabel()
-        movieinforButton.layer.masksToBounds = true
-        movieinforButton.layer.cornerRadius = 15
-        reservationbutton.layer.masksToBounds = true
-        reservationbutton.layer.cornerRadius = 15
-    }
-    
-    //영화디테일 페이지 넘어가는 버튼부분
-    @IBAction func moiveinformation(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
-            return }
-        
-        vc.tempMovieId = movieId
-        
-        self.present(vc, animated: true)
-    }
-    
-    //인원 마이너스부분
-     @IBAction func minusAction(_ sender: UIButton) {
-         personnelInt -= 1
-         refreshTextLabel()
-     }
-    //인원 플러스부분
-    @IBAction func plusAction(_ sender: UIButton) {
-        personnelInt += 1
-        refreshTextLabel()
-    }
-    //인원플러스 한 값을 반영하는것
-    private func refreshTextLabel() {
-        self.personnelLabel.text = String(personnelInt)
-    }
-    //예매하기 버튼 누르면 코어데이터 저장
-    @IBAction func reservationbutton(_ sender: UIButton) {
-        //reservationCreate()
-        alertpopup()
-    }
+
     
     //코어데이터부분 예매날짜,예매인원부분
 //    func reservationCreate() {
@@ -255,10 +211,63 @@ extension MoiveReservationViewController {
 //        return ("\(formattedDate)\n\(weekFormatter) ")
 //    }
     
-    //예매완료 알럿창
-    func alertpopup(){
-        let alert = UIAlertController(title: "예매가 완료되었습니다", message: nil, preferredStyle: .alert)
-        let okalert = UIAlertAction(title: "확인", style: .default)
+  
+}
+//MARK: - 버튼들 + 디테일페이지넘어가는 버튼 , 알럿창부분
+extension MoiveReservationViewController {
+    
+    
+    //영화디테일 페이지 넘어가는 버튼부분
+    @IBAction func moiveinformation(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
+            return }
+        
+        vc.tempMovieId = movieId
+        
+        self.present(vc, animated: true)
+    }
+    
+    //버튼 디자인수정부분
+    func setbuttonUI() {
+        refreshTextLabel()
+        movieinforButton.layer.masksToBounds = true
+        movieinforButton.layer.cornerRadius = 15
+        reservationbutton.layer.masksToBounds = true
+        reservationbutton.layer.cornerRadius = 15
+    }
+    
+    //인원 마이너스부분
+    @IBAction func minusAction(_ sender: UIButton) {
+        // -값으로 못가게하는부분
+        if personnelInt > 1 {
+            personnelInt -= 1
+            refreshTextLabel()
+        }
+    }
+    //인원 플러스부분
+    @IBAction func plusAction(_ sender: UIButton) {
+        personnelInt += 1
+        refreshTextLabel()
+    }
+    //인원플러스 한 값을 반영하는것
+    private func refreshTextLabel() {
+        self.personnelLabel.text = String(personnelInt)
+    }
+    //MARK: - 예매하기 버튼 누르면 코어데이터 저장 + 마이페이지 이동
+    @IBAction func reservationbutton(_ sender: UIButton) {
+        //reservationCreate()
+        let alert = UIAlertController(title: "예약이 완료되었습니다", message: nil, preferredStyle: .alert)
+        let okalert = UIAlertAction(title: "확인", style: .default)  { _ in
+            let storyboard = UIStoryboard(name: "myPage", bundle: Bundle.main)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController else {
+                return
+            }
+            // 무비아이디 전달부분
+//            vc.tempMovieId = movieId
+            self.present(vc, animated: true)
+           
+        }
         alert.addAction(okalert)
         present(alert, animated: true)
     }

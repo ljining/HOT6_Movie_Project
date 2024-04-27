@@ -35,7 +35,6 @@ extension Day {
     Day(date: "4"),
     Day(date: "5"),
     ]
-   
 }
 
 
