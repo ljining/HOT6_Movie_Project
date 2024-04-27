@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Detail Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginDetailController" id="Y6W-OH-hqX" customClass="LoginDetailController" customModule="Mega6Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 18465" translatesAutoresizingMaskIntoConstraints="NO" id="d9m-HW-ITg">
+                                <rect key="frame" x="100" y="90" width="191" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mTd-cD-14W"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메가6박스 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id0-ag-2gN">
+                                <rect key="frame" x="40" y="246.33333333333334" width="133" height="20.333333333333343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="third"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="아이디" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ej2-Pa-1M9">
+                                <rect key="frame" x="30" y="281.66666666666669" width="331" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NT1-js-wCp"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="비밀번호" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-js-Jaf">
+                                <rect key="frame" x="30" y="336.66666666666669" width="331" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Wa-7d-BtN"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="아이디/비밀번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbJ-DZ-net">
+                                <rect key="frame" x="35" y="406.66666666666669" width="263" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An7-Pm-nbe">
+                                <rect key="frame" x="30" y="448" width="333" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="third"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그인"/>
+                                <connections>
+                                    <action selector="tapLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNE-6m-sKk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="□ 자동 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-gg-3X1">
+                                <rect key="frame" x="35" y="379" width="133" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dO2-js-Jaf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="AA2-iF-GgI"/>
+                            <constraint firstItem="HbJ-DZ-net" firstAttribute="top" secondItem="dO2-js-Jaf" secondAttribute="bottom" constant="30" id="UaW-nE-U7f"/>
+                            <constraint firstItem="d9m-HW-ITg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="XsA-Ps-b2h"/>
+                            <constraint firstItem="dO2-js-Jaf" firstAttribute="top" secondItem="Ej2-Pa-1M9" secondAttribute="bottom" constant="15" id="YNF-Eu-aJN"/>
+                            <constraint firstItem="HbJ-DZ-net" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="ZbC-Vl-1HW"/>
+                            <constraint firstItem="d9m-HW-ITg" firstAttribute="centerX" secondItem="Ej2-Pa-1M9" secondAttribute="centerX" id="hNP-TR-B1z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HbJ-DZ-net" secondAttribute="trailing" constant="90" id="jsG-m8-b9m"/>
+                            <constraint firstItem="d9m-HW-ITg" firstAttribute="centerX" secondItem="dO2-js-Jaf" secondAttribute="centerX" id="mXM-mZ-cXM"/>
+                            <constraint firstItem="dO2-js-Jaf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="336.66666666666669" id="oxO-rx-8jF"/>
+                            <constraint firstItem="dO2-js-Jaf" firstAttribute="leading" secondItem="Ej2-Pa-1M9" secondAttribute="leading" id="rdG-1g-wl3"/>
+                            <constraint firstItem="d9m-HW-ITg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="31" id="tbF-PK-f5h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="autoLogin" destination="JYJ-gg-3X1" id="myL-ev-9K2"/>
+                        <outlet property="id" destination="Ej2-Pa-1M9" id="KOf-YF-HHG"/>
+                        <outlet property="label" destination="HbJ-DZ-net" id="AgF-UX-IJ5"/>
+                        <outlet property="login" destination="An7-Pm-nbe" id="YXM-qj-zrD"/>
+                        <outlet property="password" destination="dO2-js-Jaf" id="KsY-lF-9kE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197.70992366412213" y="51.408450704225352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 18465" width="191" height="25"/>
+        <namedColor name="third">
+            <color red="0.47099998593330383" green="0.2630000114440918" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
