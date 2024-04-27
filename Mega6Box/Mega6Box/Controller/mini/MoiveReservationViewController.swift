@@ -19,24 +19,25 @@ class MoiveReservationViewController: UIViewController {
     @IBOutlet weak var posterimage: UIImageView!
     
     
-    //상영시간 더미데이터부분 
+    //상영시간 더미데이터부분
     let screenigtimeList = Screenigtime.data
     //날짜 더미데이터부분
     let dayList = Day.data
-//    let cellName = "MovieCell"
-//    let cellReuseIdentifier = "MovieCell"
+    //    let cellName = "MovieCell"
+    //    let cellReuseIdentifier = "MovieCell"
     let topCellReuseIdentifier = "DateCellReuseIdentifier"
     let bottomCellReuseIdentifier = "MovieCellReuseIdentifier"
     //인원수 값 들어가있는부분
     private var personnelInt: Int = 1
-   
     
     var tempMovieId: Int?   //이전화면에서 ID를 받아와서 할당할 변수
     var movieId: Int = 0
+    var date = Date()
+    
     
     
     //구현목록
-      //1.서치에서 예매버튼으로 넘어온 데이터값 받아오는거  imageView5부분이랑,genreLabel부분,moivenameLabel,releaseLabel 네가지값 와야함
+    //1.서치에서 예매버튼으로 넘어온 데이터값 받아오는거  imageView5부분이랑,genreLabel부분,moivenameLabel,releaseLabel 네가지값 와야함
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,13 +103,17 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
         }
         return 0
     }
-
+    
     //구조체에서 데이터받아서 셀에반영부분
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == topcollectionView {
             //예약데이 더미데이터 받아오는부분
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: topCellReuseIdentifier , for: indexPath) as! DateCell
-            //cell.dateLabel.text = weekfunc(input: indexPath.row)//텍스트 라벨에 넣어야함
+            cell.dateLabel.text = weekfunc(input: indexPath.row)//텍스트 라벨에 넣어야함
+            if(indexPath.row == 0){
+                cell.clickCount += 1
+            }
+            
             return cell
         } else {
             //상영시간 더미데이터 받아오는부분
@@ -117,6 +122,9 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
             cell2.timeLabel.text = secreening.time
             cell2.seatLabel.text = secreening.seat
             cell2.layer.cornerRadius = 8
+            if(indexPath.row == 0){
+                cell2.clickCount += 1
+            }
             return cell2
         }
     }
@@ -142,11 +150,12 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
         let dateCellNib = UINib(nibName: "DateCell", bundle: nil)
         topcollectionView.register(dateCellNib, forCellWithReuseIdentifier: topCellReuseIdentifier)
     }
-
+    
     //클릭된 셀 활성화 보여주기
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == topcollectionView {
-//            let selectedDate = dayList[indexPath.item]
+            //            let selectedDate = dayList[indexPath.item]
+            date = setDate(input: indexPath.row)
             let cell = collectionView.cellForItem(at: indexPath) as! DateCell
             if cell.clickCount == 1 {
                 cell.clickCount = 0
@@ -154,13 +163,13 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
                 cell.clickCount += 1
             }
         } else {
-        // 클릭된 셀을 가져옴
-        let cell = collectionView.cellForItem(at: indexPath) as! MovieCell
-        // 가져온 셀의 clickCount를 판단
-        if cell.clickCount == 1 {
-            // clickCount가 1이면 이미 선택되어 있는 셀이므로 다시 회색으로 바꿔주기 -> 값을 0으로 변경
-            cell.clickCount = 0
-        }
+            // 클릭된 셀을 가져옴
+            let cell = collectionView.cellForItem(at: indexPath) as! MovieCell
+            // 가져온 셀의 clickCount를 판단
+            if cell.clickCount == 1 {
+                // clickCount가 1이면 이미 선택되어 있는 셀이므로 다시 회색으로 바꿔주기 -> 값을 0으로 변경
+                cell.clickCount = 0
+            }
             else {
                 cell.clickCount += 1
             }
@@ -191,10 +200,10 @@ extension MoiveReservationViewController {
     }
     
     //인원 마이너스부분
-     @IBAction func minusAction(_ sender: UIButton) {
-         personnelInt -= 1
-         refreshTextLabel()
-     }
+    @IBAction func minusAction(_ sender: UIButton) {
+        personnelInt -= 1
+        refreshTextLabel()
+    }
     //인원 플러스부분
     @IBAction func plusAction(_ sender: UIButton) {
         personnelInt += 1
@@ -206,54 +215,64 @@ extension MoiveReservationViewController {
     }
     //예매하기 버튼 누르면 코어데이터 저장
     @IBAction func reservationbutton(_ sender: UIButton) {
-        //reservationCreate()
+        reservationCreate()
         alertpopup()
     }
     
     //코어데이터부분 예매날짜,예매인원부분
-//    func reservationCreate() {
-//        let context = ContainerManager.shared.persistentContainer.viewContext
-//        let newMega6box = Mega6Box(context: context)
-//        newMega6box.personnel = Int16(personnelInt)
-//        newMega6box.date = Date()
-//        print(personnelInt)
-//    }
-//    //코어데이터 저장값 확인하기 테스트버튼
-//    @IBAction func testbutton(_ sender: UIButton) {
-//        testfetch()
-//    }
-//    //코어데이터 저장값 확인하기 테스트용
-//    func testfetch() {
-//        let context = ContainerManager.shared.persistentContainer.viewContext
-//        let fetchRequest: NSFetchRequest<Mega6Box> = Mega6Box.fetchRequest()
-//            do {
-//                let mega6Boxes = try context.fetch(fetchRequest)
-//                for mega6Box in mega6Boxes {
-//                    print("Personnel: \(mega6Box.personnel) \(String(describing: mega6Box.date))")
-//                }
-//            } catch {
-//                print("Failed to fetch Mega6Boxes: \(error)")
-//            }
-//        }
-//    //숫자를 넣고 스트링값으로 반환하는것
-//    func weekfunc(input :Int) -> String {
-//        //오늘 날자의 데이터값 가져오는거 시간에대한 정보를 저장
-//        let now = Date() //Data() init메소드 == Date.now
-//        let calendar = Calendar.current //현재 캘린더 가져와줘 인스턴스로
-////        let week = calendar.component(.weekday, from: now)//지금 현재 주를 반환
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "ko_KR") //필요한 데이터 커스텀부분 한국어
-//        dateFormatter.dateFormat = "MM dd" // 월일만요구하기
-//        
-//        let tomorrow = Calendar.current.date(byAdding: .day, value: input, to: now)
-//        let formattedDate = dateFormatter.string(from: tomorrow!)
-//        let retunrweek = calendar.component(.weekday, from: tomorrow!)
-//        let weekFormatter = dateFormatter.weekdaySymbols[retunrweek - 1]//0은일요일미국식 -1 하는이유는 한국식으로 요일표시
-////        print(weekFormatter)
-////        print(formattedDate)
-//        return ("\(formattedDate)\n\(weekFormatter) ")
-//    }
+    func reservationCreate() {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let newMega6box = Mega6Box(context: context)
+        newMega6box.personnel = Int16(personnelInt)
+        newMega6box.date = date
+        //id값 정확하게 받아오기
+        newMega6box.id = Int64(tempMovieId!)
+        
+        let fetchRequest: NSFetchRequest<Mega6Box> = Mega6Box.fetchRequest()
+        do {
+            let mega6Boxes = try context.fetch(fetchRequest)
+            for mega6Box in mega6Boxes {
+                print("Personnel: \(mega6Box.personnel) \n \(String(describing: mega6Box.date)) \n \(mega6Box.id)")
+                try context.save()
+                //try context.fetch(fetchRequest)
+            }
+        }
+        catch {
+            print("Failed to fetch Mega6Boxes: \(error)")
+        }
+
+    }
+    
+    //        print(personnelInt)
+    //    }
+    //    //코어데이터 저장값 확인하기 테스트버튼
+    //    @IBAction func testbutton(_ sender: UIButton) {
+    //        testfetch()
+    //    }
+    //    //코어데이터 저장값 확인하기 테스트용
+    //    func testfetch() {
+    //        let context = ContainerManager.shared.persistentContainer.viewContext
+    
+    //    //숫자를 넣고 스트링값으로 반환하는것
+    func weekfunc(input :Int) -> String {
+        //오늘 날자의 데이터값 가져오는거 시간에대한 정보를 저장
+        let now = Date() //Data() init메소드 == Date.now
+        let calendar = Calendar.current //현재 캘린더 가져와줘 인스턴스로
+        //        let week = calendar.component(.weekday, from: now)//지금 현재 주를 반환
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR") //필요한 데이터 커스텀부분 한국어
+        dateFormatter.dateFormat = "MM dd" // 월일만요구하기
+        
+        let tomorrow = Calendar.current.date(byAdding: .day, value: input, to: now)
+        let formattedDate = dateFormatter.string(from: tomorrow!)
+        let retunrweek = calendar.component(.weekday, from: tomorrow!)
+        let weekFormatter = dateFormatter.weekdaySymbols[retunrweek - 1]//0은일요일미국식 -1
+        //print(weekFormatter)
+        //print(formattedDate)
+        return ("\(formattedDate)\n\(weekFormatter) ")
+    }
+    
     
     //예매완료 알럿창
     func alertpopup(){
@@ -261,6 +280,19 @@ extension MoiveReservationViewController {
         let okalert = UIAlertAction(title: "확인", style: .default)
         alert.addAction(okalert)
         present(alert, animated: true)
+    }
+    
+    func setDate(input : Int) -> Date {
+        //Data  , Calender
+        let currentDate = Date()
+        let calendar = Calendar.current
+        
+        if let newDate = calendar.date(byAdding: .day, value: input, to: currentDate) {
+            return newDate
+        } else {
+            // In case there is an error adding a day (highly unlikely), return the current date
+            return currentDate
+        }
     }
 }
 

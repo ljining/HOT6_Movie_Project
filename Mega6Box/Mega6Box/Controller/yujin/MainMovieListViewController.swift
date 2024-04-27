@@ -58,6 +58,7 @@ class MainMovieListViewController: UIViewController {
     }
     
     @IBAction func tapMyPageBtn(_ sender: Any) {
+        print("버튼클릭")
         let storyboard = UIStoryboard(name: "myPage", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController {
             // Setting the modal presentation style to fullscreen
@@ -66,6 +67,7 @@ class MainMovieListViewController: UIViewController {
             present(viewController, animated: true)
         }
     }
+    
     @IBAction func tapSettingBtn(_ sender: Any) {
         //기능없는 페이지.
         let storyboard = UIStoryboard(name: "myPage", bundle: nil)

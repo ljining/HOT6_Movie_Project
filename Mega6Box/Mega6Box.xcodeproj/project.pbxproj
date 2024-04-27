@@ -38,6 +38,7 @@
 		9A84E9132BDB4ADE00271441 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9122BDB4ADE00271441 /* Movie.swift */; };
 		9A84E9172BDB4C6D00271441 /* MoveNextStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */; };
 		9A84E91D2BDBC54300271441 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A84E91A2BDBBB3000271441 /* Kingfisher */; };
+		9A84E9252BDCF48000271441 /* CoreDataManaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84E9242BDCF48000271441 /* CoreDataManaer.swift */; };
 		9A909F202BD749A60064A813 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A909F1F2BD749A60064A813 /* Login.storyboard */; };
 		9A95FB132BD7D506002F4F36 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A95FB122BD7D506002F4F36 /* Kingfisher */; };
 		9AFFCE372BD7B4A0004798A9 /* AssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */; };
@@ -86,9 +87,9 @@
 		9A84E8F42BDB464400271441 /* DateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		9A84E8F82BDB464400271441 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
 		9A84E9092BDB488D00271441 /* ContainerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerManager.swift; sourceTree = "<group>"; };
-		9A84E90A2BDB489400271441 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9A84E9122BDB4ADE00271441 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNextStoryBoard.swift; sourceTree = "<group>"; };
+		9A84E9242BDCF48000271441 /* CoreDataManaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManaer.swift; sourceTree = "<group>"; };
 		9A909F1F2BD749A60064A813 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9AFFCE362BD7B4A0004798A9 /* AssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignViewController.swift; sourceTree = "<group>"; };
 		9C3AA3922BD68AC30085206D /* Mega6Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega6Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +138,8 @@
 			children = (
 				9CD76E422BDCA1EE00C9A5B2 /* NetworkController.swift */,
 				9A84E9092BDB488D00271441 /* ContainerManager.swift */,
-				9A84E90A2BDB489400271441 /* CoreDataManager.swift */,
 				9A84E9162BDB4C6D00271441 /* MoveNextStoryBoard.swift */,
+				9A84E9242BDCF48000271441 /* CoreDataManaer.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -236,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				9A84E9112BDB4AB900271441 /* struct */,
-				9A84E90F2BDB49C100271441 /* cell */,
 				9A84E8D52BDB3F2100271441 /* Constants.swift */,
 			);
 			path = Model;
@@ -256,6 +256,7 @@
 				9CD76E462BDCC9EE00C9A5B2 /* MovieSearchPage.storyboard */,
 				9A3933202BD8AEAD001BEFD3 /* myPage.storyboard */,
 				9A59F7BA2BDA51F300798DCD /* SearchView.storyboard */,
+				9A84E90F2BDB49C100271441 /* cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +371,7 @@
 				9C3AA39A2BD68AC30085206D /* MainViewController.swift in Sources */,
 				9A39331D2BD88A1E001BEFD3 /* LoginDetailController.swift in Sources */,
 				9C3AA3962BD68AC30085206D /* AppDelegate.swift in Sources */,
+				9A84E9252BDCF48000271441 /* CoreDataManaer.swift in Sources */,
 				9A84E8FA2BDB464400271441 /* MoiveReservationViewController.swift in Sources */,
 				9A84E8B82BDB38AC00271441 /* MovieListCollectionViewCell.swift in Sources */,
 				9C3AA3A02BD68AC30085206D /* Mega6Box.xcdatamodeld in Sources */,
