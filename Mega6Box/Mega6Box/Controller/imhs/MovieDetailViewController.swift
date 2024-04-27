@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+
 class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
     var tempMovieId: Int?
     var movieId: Int = 0

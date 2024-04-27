@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="370" id="v6F-Gh-lnz"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="myPageCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPageCell" rowHeight="143" id="cwA-Z4-cR3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="myPageCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPageCell" rowHeight="143" id="cwA-Z4-cR3" customClass="myPageCell" customModule="Mega6Box" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="333" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cwA-Z4-cR3" id="bQN-7e-mHF">
@@ -75,7 +75,7 @@
                                                     <color key="textColor" name="third"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약일 2024 / 04 / 22" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkb-OY-0Pq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약일 2024 / 04 / 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkb-OY-0Pq">
                                                     <rect key="frame" x="125" y="64" width="200" height="20.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="zs9-xj-TUm"/>
@@ -84,7 +84,7 @@
                                                     <color key="textColor" name="third"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인원 수 : 2명" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61C-s8-HWV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인원 수 : 2명" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61C-s8-HWV">
                                                     <rect key="frame" x="125" y="92" width="200" height="20.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="NF6-wD-2gb"/>
@@ -105,6 +105,12 @@
                                                 <constraint firstItem="Rkb-OY-0Pq" firstAttribute="leading" secondItem="rsc-9Z-dbi" secondAttribute="leading" id="sdS-5R-8lK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Cellimage" destination="IVn-Xh-Wni" id="Vf6-Ba-Wle"/>
+                                            <outlet property="date" destination="Rkb-OY-0Pq" id="4NM-Ho-Wu3"/>
+                                            <outlet property="num" destination="61C-s8-HWV" id="GoL-mV-0ys"/>
+                                            <outlet property="title" destination="rsc-9Z-dbi" id="fEv-Zu-QiO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
