@@ -6,6 +6,8 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var seatLabel: UILabel!
     @IBOutlet weak var moivecellView: UIView!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

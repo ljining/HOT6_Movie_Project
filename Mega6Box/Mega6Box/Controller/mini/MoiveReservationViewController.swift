@@ -122,9 +122,6 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
             cell2.timeLabel.text = secreening.time
             cell2.seatLabel.text = secreening.seat
             cell2.layer.cornerRadius = 8
-            if(indexPath.row == 0){
-                cell2.clickCount += 1
-            }
             return cell2
         }
     }
@@ -157,6 +154,13 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
             //            let selectedDate = dayList[indexPath.item]
             date = setDate(input: indexPath.row)
             let cell = collectionView.cellForItem(at: indexPath) as! DateCell
+            var firstIndexPath = IndexPath(item: 0, section: 0)
+                
+            if let firstCell = collectionView.cellForItem(at: firstIndexPath) as? DateCell {
+                if firstCell.clickCount == 1 {
+                    firstCell.clickCount = 0
+                }
+            }
             if cell.clickCount == 1 {
                 cell.clickCount = 0
             } else {

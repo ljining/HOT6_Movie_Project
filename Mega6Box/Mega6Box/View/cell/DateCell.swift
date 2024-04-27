@@ -29,7 +29,7 @@ class DateCell: UICollectionViewCell {
             if !isSelected {
                 datecellView.backgroundColor = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
                 clickCount = 0
-            
+
             }
         }
     }
