@@ -142,10 +142,12 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
             autoLogin.text = "□ 자동 로그인"
             autoLogin.textColor = UIColor.black
             flag = false
+            UserSettings.shared.auto = false
         }else{
             autoLogin.text = "☑︎ 자동 로그인"
             //autoLogin.textColor = UIColor.blue
             flag = true
+            UserSettings.shared.auto = true
         }
     }
 }

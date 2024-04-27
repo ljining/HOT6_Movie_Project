@@ -60,9 +60,19 @@ class LoginViewViewController: UIViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         
+        
     }
     
     @IBAction func tapLoginBtn(_ sender: Any) {
+        if(UserSettings.shared.auto == true){
+            let storyboard = UIStoryboard(name: "MainMovieList", bundle: nil)
+            if let viewController = storyboard.instantiateViewController(withIdentifier: "MainMovieList") as? MainMovieListViewController {
+                // Setting the modal presentation style to fullscreen
+                viewController.modalPresentationStyle = .fullScreen
+                // Presenting the view controller modally
+                present(viewController, animated: true)
+            }
+        }
         let storyboard = UIStoryboard(name: "LoginDetail", bundle: nil)
         // navigationController를 사용하여 뷰 컨트롤러를 push
         if let viewController = storyboard.instantiateViewController(withIdentifier: "LoginDetailController") as? LoginDetailController {

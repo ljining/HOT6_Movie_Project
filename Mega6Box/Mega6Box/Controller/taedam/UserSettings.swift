@@ -14,7 +14,7 @@ class UserSettings {
 
     var userID: String? {
         get { defaults.string(forKey: "userID") }
-        set { defaults.set(newValue, forKey: "userID") }
+        set { defaults.set(newValue, forKey: " ") }
     }
 
     var password: String? {
@@ -35,6 +35,14 @@ class UserSettings {
         get { defaults.string(forKey: "nickName") }
         set { defaults.set(newValue, forKey: "nickName") }
     }
+    var auto: Bool? {
+            get {
+                return defaults.bool(forKey: "autoKey") // Use a string key
+            }
+            set {
+                defaults.set(newValue, forKey: "autoKey") // Save the new value using the same key
+            }
+        }
 
     var birthDate: Date? {
         get {

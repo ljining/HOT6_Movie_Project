@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     // MARK: - 배우 프로필 사진
     var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 80
+        imageView.layer.cornerRadius = 85
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -40,6 +40,21 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    // MARK: - 뒤로가기 버튼
+    lazy var profileBackButton: UIButton = {
+        let button = UIButton()
+        let backImage = UIImage(systemName: "chevron.left")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        button.setImage(backImage, for: .normal)
+        button.setTitle(" 뒤로 가기", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        button.backgroundColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     // MARK: - 필모그래피, 테이블 뷰가 담길 뷰
@@ -64,7 +79,7 @@ class ProfileViewController: UIViewController {
     var filmographyTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
-        tableView.layer.cornerRadius = 20
+        tableView.layer.cornerRadius = 10
         tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -81,13 +96,16 @@ class ProfileViewController: UIViewController {
             castId = id
             castName = name
         }
-        print("받아온 데이터 castId: \(castId), castName: \(castName)")
+        //print("받아온 데이터 castId: \(castId), castName: \(castName)")
         
         setAutoLayout()     //오토레이아웃 설정
-        
         setProfile(castId: castId, castName: castName)  //배우 정보 가져오기
-        
         filmographyTableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    // MARK: - 뒤로가기 버튼
+    @objc func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - 오토레이아웃 설정
@@ -95,35 +113,47 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileView)
         profileView.addSubview(profileImageView)
         profileView.addSubview(profileNameLabel)
+        profileView.addSubview(profileBackButton)
         
         view.addSubview(filmographyView)
         filmographyView.addSubview(filmographyLabel)
         filmographyView.addSubview(filmographyTableView)
-        
-        
+                
         NSLayoutConstraint.activate([
+            //프로필 뷰 - 뒤로가기, 프로필사진, 배우 이름
             profileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             profileView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             profileView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             profileView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
             
+            //뒤로가기 버튼
+            profileBackButton.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 10),
+            profileBackButton.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 10),
+            profileBackButton.widthAnchor.constraint(equalToConstant: 80),
+            profileBackButton.heightAnchor.constraint(equalToConstant: 30),
+            
+            //프로필 사진
             profileImageView.centerXAnchor.constraint(equalTo: profileView.centerXAnchor),
             profileImageView.centerYAnchor.constraint(equalTo: profileView.centerYAnchor),
             profileImageView.heightAnchor.constraint(equalTo: profileView.heightAnchor, multiplier: 0.7),
             profileImageView.widthAnchor.constraint(equalTo: profileView.widthAnchor, multiplier: 0.45),
             
+            //배우 이름
             profileNameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
             profileNameLabel.centerXAnchor.constraint(equalTo: profileView.centerXAnchor),
             
+            //필모그래피 뷰 - 레이블, 테이블뷰
             filmographyView.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 5),
             filmographyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             filmographyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             filmographyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
+            //필모그래피 레이블
             filmographyLabel.topAnchor.constraint(equalTo: filmographyView.topAnchor, constant: 5),
             filmographyLabel.leadingAnchor.constraint(equalTo: filmographyView.leadingAnchor, constant: 10),
             filmographyLabel.trailingAnchor.constraint(equalTo: filmographyView.trailingAnchor, constant: -10),
             
+            //필모그래피 테이블 뷰
             filmographyTableView.topAnchor.constraint(equalTo: filmographyLabel.bottomAnchor, constant: 5),
             filmographyTableView.leadingAnchor.constraint(equalTo: filmographyView.leadingAnchor),
             filmographyTableView.trailingAnchor.constraint(equalTo: filmographyView.trailingAnchor),
@@ -172,7 +202,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ProfileTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
-
+        cell.selectionStyle = .none //cell 선택 표시 비활성화
+        
         if let posterPath = person?.knownFor[indexPath.row].posterPath {
             if let url = URL(string: "\(MovieApi.imageUrl)\(posterPath)") {
                 DispatchQueue.main.async {

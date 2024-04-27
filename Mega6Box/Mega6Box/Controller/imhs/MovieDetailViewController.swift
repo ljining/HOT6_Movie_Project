@@ -141,8 +141,9 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - 배우 상세 정보 화면으로 이동
     @objc func buttonTapped(_ sender: UIButton) {
         let profileVC = ProfileViewController()
-        profileVC.tempId = sender.tag   //배우ID
-        profileVC.tempName = sender.titleLabel?.text    //배우이름
+        profileVC.tempId = sender.tag          //배우ID
+        profileVC.tempName = sender.titleLabel?.text  //배우이름
+        profileVC.modalPresentationStyle = .fullScreen //이동할 화면을 풀 스크린으로 만들기
         present(profileVC, animated: true, completion: nil)
     }
     
