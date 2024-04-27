@@ -183,44 +183,6 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
 extension MoiveReservationViewController {
 
     //버튼 수정부분
-    func setbuttonUI() {
-        refreshTextLabel()
-        movieinforButton.layer.masksToBounds = true
-        movieinforButton.layer.cornerRadius = 15
-        reservationbutton.layer.masksToBounds = true
-        reservationbutton.layer.cornerRadius = 15
-    }
-    
-    //영화디테일 페이지 넘어가는 버튼부분
-    @IBAction func moiveinformation(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
-            return }
-        
-        vc.tempMovieId = movieId
-        
-        self.present(vc, animated: true)
-    }
-    
-    //인원 마이너스부분
-    @IBAction func minusAction(_ sender: UIButton) {
-        personnelInt -= 1
-        refreshTextLabel()
-    }
-    //인원 플러스부분
-    @IBAction func plusAction(_ sender: UIButton) {
-        personnelInt += 1
-        refreshTextLabel()
-    }
-    //인원플러스 한 값을 반영하는것
-    private func refreshTextLabel() {
-        self.personnelLabel.text = String(personnelInt)
-    }
-    //예매하기 버튼 누르면 코어데이터 저장
-    @IBAction func reservationbutton(_ sender: UIButton) {
-        reservationCreate()
-        alertpopup()
-    }
    
     //코어데이터부분 예매날짜,예매인원부분
     func reservationCreate() {
