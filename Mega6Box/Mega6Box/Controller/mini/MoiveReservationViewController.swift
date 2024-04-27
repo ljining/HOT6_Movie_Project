@@ -23,14 +23,13 @@ class MoiveReservationViewController: UIViewController {
     let screenigtimeList = Screenigtime.data
     //날짜 더미데이터부분
     let dayList = Day.data
-
     let topCellReuseIdentifier = "DateCellReuseIdentifier"
     let bottomCellReuseIdentifier = "MovieCellReuseIdentifier"
     //인원수 값 들어가있는부분
     private var personnelInt: Int = 1
 
-    
-    var tempMovieId: Int?   //이전화면에서 ID를 받아와서 할당할 변수
+    //이전화면에서 ID를 받아와서 할당할 변수
+    var tempMovieId: Int?
 
     var movieId: Int = 0
     var date = Date()
@@ -152,7 +151,7 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
             //            let selectedDate = dayList[indexPath.item]
             date = setDate(input: indexPath.row)
             let cell = collectionView.cellForItem(at: indexPath) as! DateCell
-            var firstIndexPath = IndexPath(item: 0, section: 0)
+            let firstIndexPath = IndexPath(item: 0, section: 0)
                 
             if let firstCell = collectionView.cellForItem(at: firstIndexPath) as? DateCell {
                 if firstCell.clickCount == 1 {
@@ -181,8 +180,6 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
 
 //MARK: - 코어데이터부분
 extension MoiveReservationViewController {
-
-    //버튼 수정부분
    
     //코어데이터부분 예매날짜,예매인원부분
     func reservationCreate() {
@@ -208,17 +205,7 @@ extension MoiveReservationViewController {
 
     }
     
-    //        print(personnelInt)
-    //    }
-    //    //코어데이터 저장값 확인하기 테스트버튼
-    //    @IBAction func testbutton(_ sender: UIButton) {
-    //        testfetch()
-    //    }
-    //    //코어데이터 저장값 확인하기 테스트용
-    //    func testfetch() {
-    //        let context = ContainerManager.shared.persistentContainer.viewContext
-    
-    //    //숫자를 넣고 스트링값으로 반환하는것
+     //숫자를 넣고 스트링값으로 반환하는것
     func weekfunc(input :Int) -> String {
         //오늘 날자의 데이터값 가져오는거 시간에대한 정보를 저장
         let now = Date() //Data() init메소드 == Date.now
@@ -284,7 +271,7 @@ extension MoiveReservationViewController {
     }
     //MARK: - 예매하기 버튼 누르면 코어데이터 저장 + 마이페이지 이동
     @IBAction func reservationbutton(_ sender: UIButton) {
-        //reservationCreate()
+        reservationCreate()
         let alert = UIAlertController(title: "예약이 완료되었습니다", message: nil, preferredStyle: .alert)
         let okalert = UIAlertAction(title: "확인", style: .default)  { _ in
             let storyboard = UIStoryboard(name: "myPage", bundle: Bundle.main)
