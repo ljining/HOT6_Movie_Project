@@ -111,6 +111,8 @@ extension MoiveReservationViewController: UICollectionViewDelegate, UICollection
                 cell.clickCount += 1
             }
             
+            configureCellAppearance(cell: cell)
+            
             return cell
         } else {
             //상영시간 더미데이터 받아오는부분
@@ -274,16 +276,16 @@ extension MoiveReservationViewController {
     @IBAction func reservationbutton(_ sender: UIButton) {
         reservationCreate()
         let alert = UIAlertController(title: "예약이 완료되었습니다", message: nil, preferredStyle: .alert)
-        let okalert = UIAlertAction(title: "확인", style: .default)  { _ in
-            let storyboard = UIStoryboard(name: "myPage", bundle: Bundle.main)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController else {
-                return
-            }
-            // 무비아이디 전달부분
-//            vc.tempMovieId = movieId
-            self.present(vc, animated: true)
-           
-        }
+        let okalert = UIAlertAction(title: "확인", style: .default)/*  { _ in*/
+//            let storyboard = UIStoryboard(name: "myPage", bundle: Bundle.main)
+//            guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageViewController") as? MyPageViewController else {
+//                return
+//            }
+//            // 무비아이디 전달부분
+////            vc.tempMovieId = movieId
+//            self.present(vc, animated: true)
+//           
+//        }
         alert.addAction(okalert)
         present(alert, animated: true)
     }
@@ -302,4 +304,17 @@ extension MoiveReservationViewController {
     }
 }
 
+// MARK: - 컬렉션뷰 UI 설정
+extension MoiveReservationViewController {
+    // 컬렉션 뷰 셀의 색상과 테두리 설정
+        func configureCellAppearance(cell: UICollectionViewCell) {
+            // 셀의 배경색 설정
+            cell.contentView.backgroundColor = UIColor.white
+            
+            // 셀의 테두리 설정
+            cell.layer.borderColor = UIColor.third.cgColor
+            cell.layer.borderWidth = 1.0
+            cell.layer.cornerRadius = 20.0
+        }
+}
 

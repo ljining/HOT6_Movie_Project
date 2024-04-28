@@ -111,12 +111,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 정보 관리하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zd-rs-VV6">
-                                <rect key="frame" x="35" y="778" width="86" height="15.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예매 목록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgW-qq-g5P">
                                 <rect key="frame" x="25" y="380" width="343" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -222,7 +216,6 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LPi-Ag-3xd" secondAttribute="trailing" constant="102" id="VRA-Ln-A7q"/>
                             <constraint firstAttribute="trailing" secondItem="iWw-s0-3OB" secondAttribute="trailing" constant="195" id="Vvm-Cv-dzf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3fa-ZF-pUG" secondAttribute="bottom" constant="50" id="WCm-3Y-WUA"/>
-                            <constraint firstItem="4zd-rs-VV6" firstAttribute="top" secondItem="3fa-ZF-pUG" secondAttribute="bottom" constant="10" id="YLM-bJ-7Hr"/>
                             <constraint firstItem="AlR-5f-B4A" firstAttribute="leading" secondItem="45g-Z7-1GJ" secondAttribute="trailing" constant="30" id="ZeM-gI-xUl"/>
                             <constraint firstItem="0bc-kI-0Dd" firstAttribute="top" secondItem="wUF-hr-N1y" secondAttribute="bottom" constant="10" id="b4D-OD-XkN"/>
                             <constraint firstItem="MgW-qq-g5P" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="b8e-Jb-znU"/>
@@ -237,7 +230,6 @@
                             <constraint firstItem="iWw-s0-3OB" firstAttribute="bottom" secondItem="zXc-yO-T6Y" secondAttribute="bottom" id="qAI-fp-vwL"/>
                             <constraint firstItem="3fa-ZF-pUG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="swz-6A-kKj"/>
                             <constraint firstItem="AlR-5f-B4A" firstAttribute="top" secondItem="LPi-Ag-3xd" secondAttribute="bottom" constant="5.6666666666666288" id="tkV-Tz-lHy"/>
-                            <constraint firstItem="4zd-rs-VV6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="uOC-af-D5T"/>
                             <constraint firstItem="4cF-QM-5wp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="29" id="vUT-fr-46K"/>
                             <constraint firstItem="0bc-kI-0Dd" firstAttribute="top" secondItem="AlR-5f-B4A" secondAttribute="bottom" constant="109" id="vl9-m7-FeA"/>
                             <constraint firstItem="Mow-qE-Xva" firstAttribute="leading" secondItem="iWw-s0-3OB" secondAttribute="trailing" constant="76" id="xDL-aA-tmo"/>
@@ -247,7 +239,6 @@
                     <connections>
                         <outlet property="email" destination="AlR-5f-B4A" id="EFO-xc-cdV"/>
                         <outlet property="image" destination="45g-Z7-1GJ" id="9WO-Uy-AzC"/>
-                        <outlet property="info" destination="4zd-rs-VV6" id="Dln-vh-nz8"/>
                         <outlet property="nickname" destination="LPi-Ag-3xd" id="M08-zh-XVd"/>
                         <outlet property="tableView" destination="3fa-ZF-pUG" id="Uvk-ZL-5u4"/>
                     </connections>

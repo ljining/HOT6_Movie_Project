@@ -15,7 +15,7 @@ class DateCell: UICollectionViewCell {
     var clickCount: Int = 0 {
         didSet {
             if clickCount == 0 {
-                datecellView.backgroundColor = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
+                datecellView.backgroundColor = UIColor.white
             }
             else {
                 datecellView.backgroundColor = UIColor(red: 0.6588, green: 0.6588, blue: 0.6588, alpha: 1)
@@ -27,7 +27,7 @@ class DateCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if !isSelected {
-                datecellView.backgroundColor = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
+                datecellView.backgroundColor = UIColor.white
                 clickCount = 0
 
             }
