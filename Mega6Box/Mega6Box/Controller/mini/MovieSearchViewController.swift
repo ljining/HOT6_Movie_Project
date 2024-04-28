@@ -5,7 +5,10 @@ class MovieSearchViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var searchBar1: UISearchBar!
     @IBOutlet weak var movieCollectionView: UICollectionView!
-   
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     var movieArr: [Movie]?
     
     override func viewDidLoad() {
@@ -14,7 +17,7 @@ class MovieSearchViewController: UIViewController {
         movieCollectionView.dataSource = self
         movieCollectionView.delegate = self
         layoutset()
-
+        
     }
 }
 
@@ -28,7 +31,7 @@ extension MovieSearchViewController: UICollectionViewDataSource, UICollectionVie
             return }
         
         if let movieData = movieArr,
-            let id = movieData[indexPath.row].id {
+           let id = movieData[indexPath.row].id {
             vc.tempMovieId = id
         }
         
@@ -67,22 +70,22 @@ extension MovieSearchViewController: UICollectionViewDataSource, UICollectionVie
     
     //쉐도우랑 코너레디어스는 함께 사용이 안됨
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-              cell.layer.shadowColor = UIColor.black.cgColor
-              cell.layer.shadowOffset = CGSize(width: 0, height: 2)
-              cell.layer.shadowOpacity = 0.3
-              cell.layer.shadowRadius = 4
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowRadius = 4
     }
     
     //셀사이즈 지정하는부분
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth: CGFloat = 170
         let cellheight: CGFloat = 250
-             return CGSize(width: cellWidth, height: cellheight)
-         }
-     }
+        return CGSize(width: cellWidth, height: cellheight)
+    }
+}
 //MARK: - 네트워크 검색데이터 가져오는부분
 extension MovieSearchViewController {
- 
+    
     func searchMovie(movieTitle: String) {
         NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
             switch result {
@@ -121,7 +124,8 @@ extension MovieSearchViewController: UISearchBarDelegate {
     //서치바 커스텀
     func searchbarchange1(){
         searchBar1.searchBarStyle = .minimal
-        searchBar1.layer.cornerRadius = 25
+        searchBar1.layer.cornerRadius = 20
         searchBar1.placeholder = "영화를 검색해 주세요"
+        searchBar1.layer.masksToBounds = true
     }
 }

@@ -240,6 +240,7 @@ extension MoiveReservationViewController {
         
         vc.tempMovieId = movieId
         
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     

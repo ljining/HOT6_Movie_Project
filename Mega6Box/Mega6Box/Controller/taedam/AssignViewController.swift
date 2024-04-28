@@ -32,7 +32,6 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton(assign)
         setTextFieldDelegate()
         profile.setImageRound()
         
@@ -181,21 +180,6 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd" // Setting the date format
         return dateFormatter.string(from: date)
-    }
-    
-    func setButton(_ button: UIButton) {
-        // 모서리 둥글게 설정
-        button.layer.cornerRadius = 10 // 모서리의 둥근 정도를 설정합니다. 필요에 따라 이 값을 조정하세요.
-        
-        // 배경 색상 설정 (옵션)
-        button.backgroundColor = UIColor.third // 배경색을 설정합니다. 필요에 따라 색상을 변경하세요.
-        
-        // 버튼 글씨 색상을 흰색으로 설정
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.tintColor = UIColor.white
-        
-        // 버튼의 글씨 폰트 설정 (옵션)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
     }
     
     func presentDatePicker() {

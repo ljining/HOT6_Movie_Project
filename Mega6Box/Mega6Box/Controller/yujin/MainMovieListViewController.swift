@@ -51,10 +51,11 @@ class MainMovieListViewController: UIViewController {
     @IBAction func moveToSearchPage(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "MovieSearchPage", bundle: Bundle.main)
         
-        guard let reservationVC = storyboard.instantiateViewController(withIdentifier: "MovieSearchViewController") as? MovieSearchViewController else {
+        guard let searchVC = storyboard.instantiateViewController(withIdentifier: "MovieSearchViewController") as? MovieSearchViewController else {
             return
         }
-        self.present(reservationVC, animated: true)
+        searchVC.modalPresentationStyle = .fullScreen
+        self.present(searchVC, animated: true)
     }
     
     @IBAction func tapMyPageBtn(_ sender: Any) {
@@ -147,7 +148,7 @@ extension MainMovieListViewController: UICollectionViewDelegate, UICollectionVie
         
         if let viewController = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController {
             // Setting the modal presentation style to fullscreen
-            viewController.modalPresentationStyle = .automatic
+            viewController.modalPresentationStyle = .fullScreen
             
             viewController.tempMovieId = postersID[indexPath.row]   //영화 ID 전달
             
@@ -215,7 +216,7 @@ extension MainMovieListViewController {
     }
 }
 
-// MARK: -
+// MARK: - UI Setting
 extension MainMovieListViewController {
     
     func setupUI() {
@@ -273,28 +274,3 @@ extension MainMovieListViewController {
         
     }
 }
-
-// MARK: -
-//extension MainMovieListViewController {
-//
-//    // 2초마다 실행되는 타이머
-//    func bannerTimer() {
-//        let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
-//            self.bannerMove()
-//        }
-//    }
-//    // 배너 움직이는 매서드
-//    func bannerMove() {
-//        // 현재페이지가 마지막 페이지일 경우
-//        if currentPage == movieImages.count-1 {
-//            // 맨 처음 페이지로 돌아감
-//            BannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
-//            currentPage = 0
-//            return
-//        }
-//        // 다음 페이지로 전환
-//        currentPage += 1
-//        BannerCollectionView.scrollToItem(at: NSIndexPath(item: currentPage, section: 0) as IndexPath, at: .right, animated: true)
-//    }
-//
-//}

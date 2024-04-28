@@ -12,6 +12,7 @@ class SearchViewController:UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var searchLabel: UITextField!
     
+    
     override func viewDidLoad(){
         setTextField(searchLabel)
     }

@@ -20,10 +20,14 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var bookingButton: UIButton!
+
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     let buttonWidth: CGFloat = 100  // 버튼의 가로 크기
-    let buttonHeight: CGFloat = 100 // 버튼의 세로 크기
-    let buttonSpacing: CGFloat = 5 // 버튼 간의 간격
+    let buttonHeight: CGFloat = 130 // 버튼의 세로 크기
+    let buttonSpacing: CGFloat = 10 // 버튼 간의 간격
     
     // 스크롤뷰 생성 및 설정
     var scrollView = UIScrollView()
@@ -59,7 +63,23 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.trailingAnchor.constraint(equalTo: profileView.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: profileView.bottomAnchor).isActive = true
         
-        overviewTextView.layer.cornerRadius = 15
+        overviewTextView.frame = CGRect(x: overviewTextView.frame.origin.x, y: overviewTextView.frame.origin.y, width: 370, height: 121)
+        overviewTextView.font = UIFont.systemFont(ofSize: 9.5)
+        overviewTextView.textContainerInset = UIEdgeInsets(top: 42, left: 17, bottom: 12, right: 15)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: UIColor.white
+        ]
+ 
+        let attributedString = NSAttributedString(string: "Your text", attributes: attributes)
+        overviewTextView.attributedText = attributedString
+        overviewTextView.layer.cornerRadius = 20
+        
+        backdropImageView.layer.cornerRadius = 20
+        
     }
     
     // MARK: - 영화 정보 가져오기
@@ -98,17 +118,17 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
             case .success(let list):
                 //프로필 이미지가 있는 사람만 추리기
                 let castList = list.filter { $0.profilePath != nil }
-                                
+                
                 // 이미지뷰들을 스크롤뷰에 추가
                 var contentWidth: CGFloat = 0
                 
                 for i in 0..<castList.count {
                     if let castProfilePath = castList[i].profilePath {
                         if let url = URL(string: "\(MovieApi.imageUrl)\(castProfilePath)") {
-                                                        
+                            
                             let button = UIButton(type: .custom)
                             button.frame = CGRect(x: CGFloat(i) * (self.buttonWidth + self.buttonSpacing), y: 0, width: self.buttonWidth, height: self.buttonHeight)
-                                                        
+                            
                             //프로필 페이지에서 배우 정보를 가져오기 위해 id, name 지정
                             button.setTitle("\(castList[i].name)", for: .normal)
                             button.tag = castList[i].id
@@ -117,14 +137,19 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
                             
                             DispatchQueue.main.async {
                                 button.kf.setImage(with: url, for: .normal) //배우프로필 사진
-                                button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                                button.layer.borderWidth = 1
+                                button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                                button.layer.borderWidth = 0.1
+//                                button.layer.shadowColor = UIColor.black.cgColor // 그림자 색상
+//                                button.layer.shadowOpacity = 0.5 // 그림자 투명도
+//                                button.layer.shadowOffset = CGSize(width: 0, height: 2) // 그림자의 offset
+//                                button.layer.shadowRadius = 4 // 그림자의 반경
                                 button.layer.cornerRadius = 50
                                 button.clipsToBounds = true
                                 
+                                
                                 self.scrollView.addSubview(button)
                                 contentWidth += self.buttonWidth + self.buttonSpacing
-        
+                                
                                 // 스크롤뷰의 contentSize 설정
                                 self.scrollView.contentSize = CGSize(width: contentWidth, height: self.buttonHeight)
                             }
@@ -151,7 +176,7 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func bookingButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "MovieReservationPage", bundle: Bundle.main)
         guard let reservationVC = storyboard.instantiateViewController(withIdentifier: "MoiveReservationViewController") as? MoiveReservationViewController else { return }
-            
+        
         reservationVC.tempMovieId = movieId
         
         present(reservationVC, animated: true)

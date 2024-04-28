@@ -18,8 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="Nx0-iG-fOY">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="Nx0-iG-fOY">
                                 <rect key="frame" x="16" y="177" width="361" height="56"/>
+                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="ksh-aN-UxG"/>
@@ -70,21 +71,38 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iOj-Lk-nwJ">
                                 <rect key="frame" x="105" y="103" width="185" height="54"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwB-P5-IMk">
+                                <rect key="frame" x="27" y="123.66666666666666" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="1jk-UC-m7L"/>
+                                    <constraint firstAttribute="width" constant="17" id="UD9-sD-EZW"/>
+                                </constraints>
+                                <color key="tintColor" red="0.47058823529411764" green="0.2627450980392157" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" backgroundImage="lessthan" catalog="system"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kO6-fw-DIr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="54V-Jf-RZI" secondAttribute="trailing" id="2f5-Qm-iNz"/>
                             <constraint firstItem="54V-Jf-RZI" firstAttribute="top" secondItem="Nx0-iG-fOY" secondAttribute="bottom" id="2tA-BA-hEP"/>
+                            <constraint firstItem="ZwB-P5-IMk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="27" id="7pZ-Zc-hcf"/>
                             <constraint firstItem="Nx0-iG-fOY" firstAttribute="top" secondItem="iOj-Lk-nwJ" secondAttribute="bottom" constant="20" id="DTm-ha-QBW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iOj-Lk-nwJ" secondAttribute="trailing" constant="103" id="EAq-qi-4Fw"/>
+                            <constraint firstItem="iOj-Lk-nwJ" firstAttribute="leading" secondItem="ZwB-P5-IMk" secondAttribute="trailing" constant="61" id="Ff9-F1-lv4"/>
                             <constraint firstItem="54V-Jf-RZI" firstAttribute="top" secondItem="Nx0-iG-fOY" secondAttribute="bottom" symbolic="YES" id="Fyp-ly-u2h"/>
+                            <constraint firstItem="Nx0-iG-fOY" firstAttribute="top" secondItem="ZwB-P5-IMk" secondAttribute="bottom" constant="33" id="JcB-8e-3qH"/>
                             <constraint firstItem="iOj-Lk-nwJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aXP-wq-tTo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nx0-iG-fOY" secondAttribute="trailing" constant="16" id="fo9-ld-rhG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="54V-Jf-RZI" secondAttribute="bottom" constant="35" id="h2I-Gl-M64"/>
                             <constraint firstItem="54V-Jf-RZI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kGj-sq-sm0"/>
                             <constraint firstItem="iOj-Lk-nwJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="105" id="sLM-bG-8oo"/>
                             <constraint firstItem="Nx0-iG-fOY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="uF8-Vu-IaU"/>
+                            <constraint firstItem="ZwB-P5-IMk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="17" id="vD2-t6-X0g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TgO-3g-5CI"/>
@@ -119,6 +137,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="5071" height="649"/>
+        <image name="lessthan" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
