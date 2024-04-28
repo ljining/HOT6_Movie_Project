@@ -14,7 +14,7 @@ class UserSettings {
 
     var userID: String? {
         get { defaults.string(forKey: "userID") }
-        set { defaults.set(newValue, forKey: " ") }
+        set { defaults.set(newValue, forKey: "userID") }
     }
 
     var password: String? {
