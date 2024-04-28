@@ -90,13 +90,12 @@ extension MovieSearchViewController {
         NetworkController.shared.fetchSearchMovie(apiKey: MovieApi.apiKey, language: MovieApi.language, movieTitle: movieTitle) { result in
             switch result {
             case .success(let movieList):
-                print("movieList.count: \(movieList.count)")
-                for list in movieList {
-                    print(list.posterPath ?? "")
-                }
+                
+                //posterPath가 있는 데이터만 컬렉션뷰에 보이도록
+                let list = movieList.filter { $0.posterPath != nil }
+                self.movieArr = list
                 
                 DispatchQueue.main.async {
-                    self.movieArr = movieList
                     self.movieCollectionView.reloadData()
                 }
             case .failure(let error):
