@@ -51,6 +51,7 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapNickName(_ sender: Any) {
+        print("click")
         
     }
     

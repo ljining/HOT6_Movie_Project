@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     // MARK: - 배우 프로필 사진
     var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 85
+        imageView.layer.cornerRadius = 75
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController {
     // MARK: - 배우 이름
     var profileNameLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -45,12 +46,12 @@ class ProfileViewController: UIViewController {
     // MARK: - 뒤로가기 버튼
     lazy var profileBackButton: UIButton = {
         let button = UIButton()
-        let backImage = UIImage(systemName: "chevron.left")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        let backImage = UIImage(systemName: "chevron.left")?.withTintColor(UIColor.third, renderingMode: .alwaysOriginal)
         button.setImage(backImage, for: .normal)
-        button.setTitle(" 뒤로 가기", for: .normal)
+        button.setTitle("뒤로가기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        button.backgroundColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
+        button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
@@ -69,7 +70,7 @@ class ProfileViewController: UIViewController {
     var filmographyLabel: UILabel = {
         let label = UILabel()
         label.text = "필모그래피"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

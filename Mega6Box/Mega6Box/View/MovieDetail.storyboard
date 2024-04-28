@@ -24,7 +24,7 @@
                                         <rect key="frame" x="10" y="0.0" width="369" height="185.33333333333334"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yIR-Af-Rau">
-                                                <rect key="frame" x="0.0" y="0.0" width="372.33333333333331" height="185.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="372" height="196"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="09x-9y-4YU">
                                                 <rect key="frame" x="17" y="150" width="212" height="25"/>
@@ -53,7 +53,7 @@
                                             <constraint firstItem="09x-9y-4YU" firstAttribute="top" secondItem="1vv-iw-EHm" secondAttribute="top" constant="150" id="SD0-BA-rdy"/>
                                             <constraint firstItem="yIR-Af-Rau" firstAttribute="leading" secondItem="1vv-iw-EHm" secondAttribute="leading" id="Vc9-Da-fW8"/>
                                             <constraint firstItem="09x-9y-4YU" firstAttribute="leading" secondItem="1vv-iw-EHm" secondAttribute="leading" constant="17" id="X0z-aa-gbY"/>
-                                            <constraint firstAttribute="bottom" secondItem="yIR-Af-Rau" secondAttribute="bottom" id="wPx-Vv-Z3i"/>
+                                            <constraint firstAttribute="bottom" secondItem="yIR-Af-Rau" secondAttribute="bottom" constant="-10.666666666666657" id="wPx-Vv-Z3i"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhA-4d-CqC">

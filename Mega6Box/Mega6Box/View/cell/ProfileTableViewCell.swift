@@ -13,13 +13,15 @@ class ProfileTableViewCell: UITableViewCell {
     var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     // MARK: - 영화제목
     var movieTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -39,6 +41,8 @@ class ProfileTableViewCell: UITableViewCell {
         let textView = UITextView()
         textView.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         textView.backgroundColor = UIColor(red: 0.4705 , green: 0.2627, blue: 0.902, alpha: 1)
+        textView.font = UIFont.systemFont(ofSize: 10)
+        textView.textContainerInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 5)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -66,7 +70,7 @@ class ProfileTableViewCell: UITableViewCell {
             
             // MARK: - 영화 제목
             movieTitleLabel.topAnchor.constraint(equalTo: posterImageView.topAnchor),
-            movieTitleLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 10),
+            movieTitleLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 15),
             
             // MARK: - 개봉일
             movieReleaseDateLabel.topAnchor.constraint(equalTo: posterImageView.topAnchor),
