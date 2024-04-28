@@ -11,13 +11,9 @@ import CoreData
 
 class MyPageViewController:UIViewController{
     @IBOutlet weak var image: UIImageView!
-    
     @IBOutlet weak var nickname: UILabel!
-    
     @IBOutlet weak var email: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var info: UILabel!
     
     var savemega6Boxes: [Mega6Box] = []
