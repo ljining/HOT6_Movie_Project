@@ -44,7 +44,7 @@ class MyPageViewController:UIViewController{
     }
     
     func setGround() {
-        nickname.text = UserSettings.shared.userID
+        nickname.text = UserSettings.shared.nickName
         email.text = UserSettings.shared.phoneNumber
     }
     

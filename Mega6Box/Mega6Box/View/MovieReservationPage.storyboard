@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -86,7 +86,7 @@
                                 <rect key="frame" x="14" y="457" width="377" height="1"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-Bt-gR2" userLabel="bottomCollection View">
-                                <rect key="frame" x="13" y="563" width="379" height="195"/>
+                                <rect key="frame" x="13" y="563" width="366" height="195"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="CVP-DA-qFw"/>
@@ -115,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-XQ-z0R" userLabel="topCollection View">
-                                <rect key="frame" x="13" y="473" width="379" height="79"/>
+                                <rect key="frame" x="13" y="473" width="366" height="79"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -184,7 +184,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fcK-6L-P8B" secondAttribute="trailing" constant="16.329999999999998" id="Kf4-IJ-Qvw"/>
                             <constraint firstAttribute="trailing" secondItem="OE7-6f-trn" secondAttribute="trailing" constant="14" id="LpX-7T-urH"/>
                             <constraint firstAttribute="bottom" secondItem="8DT-Bt-gR2" secondAttribute="bottom" constant="94" id="NRI-MT-fYQ"/>
-                            <constraint firstItem="8DT-Bt-gR2" firstAttribute="centerX" secondItem="B7b-8R-2hV" secondAttribute="centerX" id="Obj-I0-YzZ"/>
+                            <constraint firstItem="8DT-Bt-gR2" firstAttribute="centerX" secondItem="B7b-8R-2hV" secondAttribute="centerX" constant="-6.5" id="Obj-I0-YzZ"/>
                             <constraint firstItem="DFR-Jo-27l" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="57" id="Rtl-H0-Xyc"/>
                             <constraint firstItem="fcK-6L-P8B" firstAttribute="top" secondItem="V8C-9o-f0f" secondAttribute="bottom" constant="250" id="StO-Zk-lzu"/>
                             <constraint firstItem="DFR-Jo-27l" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="VDD-TT-6yL"/>
@@ -193,7 +193,7 @@
                             <constraint firstItem="EOF-DH-RGD" firstAttribute="top" secondItem="Db1-7c-mMh" secondAttribute="bottom" constant="34.666666666666686" id="gsF-xV-MYf"/>
                             <constraint firstItem="DFR-Jo-27l" firstAttribute="top" secondItem="8DT-Bt-gR2" secondAttribute="bottom" constant="16" id="iWr-J5-f9t"/>
                             <constraint firstItem="3rd-xV-pjG" firstAttribute="leading" secondItem="V8C-9o-f0f" secondAttribute="leading" id="j8E-YI-wQC"/>
-                            <constraint firstItem="8DT-Bt-gR2" firstAttribute="centerX" secondItem="DFR-Jo-27l" secondAttribute="centerX" id="jfA-hL-nAw"/>
+                            <constraint firstItem="8DT-Bt-gR2" firstAttribute="centerX" secondItem="DFR-Jo-27l" secondAttribute="centerX" constant="-6.5" id="jfA-hL-nAw"/>
                             <constraint firstItem="fiD-8o-94p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="22" id="oZO-Ps-9qG"/>
                             <constraint firstItem="3rd-xV-pjG" firstAttribute="bottom" secondItem="fiD-8o-94p" secondAttribute="bottom" id="rOp-kN-0DW"/>
                             <constraint firstItem="8DT-Bt-gR2" firstAttribute="leading" secondItem="Rra-XQ-z0R" secondAttribute="leading" id="rWh-uA-BVi"/>
