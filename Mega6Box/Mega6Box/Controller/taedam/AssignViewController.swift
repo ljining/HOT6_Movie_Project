@@ -42,6 +42,7 @@ class AssignViewController: UIViewController, UITextFieldDelegate {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(birthdayTapped))
         birthday.addGestureRecognizer(tapGesture2)
         birthday.isUserInteractionEnabled = true
+        UserSettings.shared.auto = false
     }
     
     

@@ -162,10 +162,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmZ-S5-Uox">
-                                <rect key="frame" x="25" y="75.666666666666657" width="16" height="17"/>
+                                <rect key="frame" x="25" y="77.666666666666657" width="16" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="b1G-Ek-ctM"/>
-                                    <constraint firstAttribute="height" constant="16" id="dYA-ye-HBX"/>
+                                    <constraint firstAttribute="height" constant="22" id="dYA-ye-HBX"/>
                                 </constraints>
                                 <color key="tintColor" red="0.47058823529999999" green="0.26274509800000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -225,7 +225,6 @@
                             <constraint firstItem="EjS-iu-ycE" firstAttribute="leading" secondItem="hrF-Fo-pEg" secondAttribute="leading" id="YVL-nL-wyz"/>
                             <constraint firstItem="tmZ-S5-Uox" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="a17-Il-9Fb"/>
                             <constraint firstItem="xBd-KB-GcI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="dZg-hm-Pii"/>
-                            <constraint firstItem="tmZ-S5-Uox" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="12.999999999999972" id="gwr-5F-uY2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xBd-KB-GcI" secondAttribute="trailing" constant="95" id="iTY-Ma-B52"/>
                             <constraint firstItem="hrF-Fo-pEg" firstAttribute="top" secondItem="nbA-Ui-foU" secondAttribute="bottom" constant="92.333333333333371" id="kAS-Nx-Lpl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nbA-Ui-foU" secondAttribute="trailing" constant="15" id="ndn-nV-xYU"/>

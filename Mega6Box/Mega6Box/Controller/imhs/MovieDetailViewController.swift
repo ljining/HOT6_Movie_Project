@@ -87,7 +87,7 @@ class MovieDetailViewController: UIViewController, UIScrollViewDelegate {
         NetworkController.shared.fetchSearchMovieId(movieId: movieId, apiKey: MovieApi.apiKey, language: MovieApi.language) { result in
             switch result {
             case .success(let movie):
-                guard let backdropImage = URL(string: "\(MovieApi.imageUrl)\(movie.backdropPath)") else { return }
+                guard let backdropImage = URL(string: "\(MovieApi.imageUrl)\(movie.backdropPath!)") else { return }
                 
                 //영화 장르 확인
                 var genres: String = ""
