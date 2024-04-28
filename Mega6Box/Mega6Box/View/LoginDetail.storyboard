@@ -58,25 +58,24 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An7-Pm-nbe">
+                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="An7-Pm-nbe">
                                 <rect key="frame" x="30" y="442" width="333" height="41"/>
                                 <color key="tintColor" name="third"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="로그인">
                                             <attributes>
                                                 <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                </buttonConfiguration>
+                                </state>
                                 <connections>
                                     <action selector="tapLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNE-6m-sKk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="□ 자동 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-gg-3X1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="□ 자동 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-gg-3X1">
                                 <rect key="frame" x="35" y="379" width="133" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -86,17 +85,23 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="An7-Pm-nbe" firstAttribute="leading" secondItem="dO2-js-Jaf" secondAttribute="leading" id="6L9-s7-IAe"/>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="AA2-iF-GgI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HbJ-DZ-net" secondAttribute="trailing" constant="95" id="Cfd-5N-5dO"/>
                             <constraint firstItem="HbJ-DZ-net" firstAttribute="top" secondItem="dO2-js-Jaf" secondAttribute="bottom" constant="30.000000000000057" id="IWg-Ge-WYL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="An7-Pm-nbe" secondAttribute="bottom" constant="335" id="Tfi-bw-EXY"/>
                             <constraint firstItem="d9m-HW-ITg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="XsA-Ps-b2h"/>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="top" secondItem="Ej2-Pa-1M9" secondAttribute="bottom" constant="15" id="YNF-Eu-aJN"/>
+                            <constraint firstItem="An7-Pm-nbe" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ax7-KS-YMr"/>
                             <constraint firstItem="d9m-HW-ITg" firstAttribute="centerX" secondItem="Ej2-Pa-1M9" secondAttribute="centerX" id="hNP-TR-B1z"/>
+                            <constraint firstItem="An7-Pm-nbe" firstAttribute="top" secondItem="JYJ-gg-3X1" secondAttribute="bottom" constant="35" id="igA-2Q-2QP"/>
                             <constraint firstItem="An7-Pm-nbe" firstAttribute="top" secondItem="HbJ-DZ-net" secondAttribute="bottom" constant="14.999999999999943" id="lan-yC-X15"/>
                             <constraint firstItem="d9m-HW-ITg" firstAttribute="centerX" secondItem="dO2-js-Jaf" secondAttribute="centerX" id="mXM-mZ-cXM"/>
+                            <constraint firstItem="JYJ-gg-3X1" firstAttribute="top" secondItem="dO2-js-Jaf" secondAttribute="bottom" constant="2.3333333333333144" id="nf6-U8-Ap9"/>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="336.66666666666669" id="oxO-rx-8jF"/>
                             <constraint firstItem="HbJ-DZ-net" firstAttribute="leading" secondItem="JYJ-gg-3X1" secondAttribute="leading" id="qLt-Tl-Wqs"/>
                             <constraint firstItem="dO2-js-Jaf" firstAttribute="leading" secondItem="Ej2-Pa-1M9" secondAttribute="leading" id="rdG-1g-wl3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JYJ-gg-3X1" secondAttribute="trailing" constant="225" id="sWE-cU-zG9"/>
                             <constraint firstItem="d9m-HW-ITg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="31" id="tbF-PK-f5h"/>
                             <constraint firstItem="HbJ-DZ-net" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="xcz-8L-0wk"/>
                         </constraints>

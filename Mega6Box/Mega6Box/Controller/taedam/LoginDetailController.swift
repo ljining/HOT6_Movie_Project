@@ -45,7 +45,7 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
         textField.borderStyle = .none  // 기본 테두리 제거
         // 테두리 색상과 두께 설정
         textField.layer.borderColor = UIColor.third.cgColor  // 보라색 테두리
-        textField.layer.borderWidth = 2.0  // 테두리 두께 2포인트
+        textField.layer.borderWidth = 1.0  // 테두리 두께 2포인트
         
         // 테두리 둥글게 설정
         textField.layer.cornerRadius = 20.0  // 모서리 반경 10포인트
@@ -105,7 +105,7 @@ class LoginDetailController: UIViewController, UITextFieldDelegate {
     }
     func setButton(_ button: UIButton) {
         // 모서리 둥글게 설정
-        button.layer.cornerRadius = 10 // 모서리의 둥근 정도를 설정합니다. 필요에 따라 이 값을 조정하세요.
+        button.layer.cornerRadius = 20 // 모서리의 둥근 정도를 설정합니다. 필요에 따라 이 값을 조정하세요.
         
         // 배경 색상 설정 (옵션)
         button.backgroundColor = UIColor.third // 배경색을 설정합니다. 필요에 따라 색상을 변경하세요.
