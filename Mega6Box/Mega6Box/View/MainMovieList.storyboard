@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -185,7 +185,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" cornerRadius="30" image="roundSquare-03"/>
+                                            <backgroundConfiguration key="background" cornerRadius="30" image="mainbutton-11"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kES-Bg-hJe">
@@ -195,7 +195,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" cornerRadius="30" image="roundSquare-03"/>
+                                            <backgroundConfiguration key="background" cornerRadius="30" image="mainbutton-03"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-GI-s9e">
@@ -204,7 +204,7 @@
                                             <constraint firstAttribute="width" secondItem="Y1R-GI-s9e" secondAttribute="height" multiplier="80:79" id="8jN-af-Yk6"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="roundSquare-03"/>
+                                        <state key="normal" backgroundImage="mainbutton-12"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-RA-Vqv">
                                         <rect key="frame" x="279" y="0.0" width="80" height="79"/>
@@ -212,7 +212,7 @@
                                             <constraint firstAttribute="width" secondItem="JlO-RA-Vqv" secondAttribute="height" multiplier="80:79" id="1gV-je-qOk"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="roundSquare-03"/>
+                                        <state key="normal" backgroundImage="mainbutton-13"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -343,10 +343,13 @@
         <image name="button-05" width="413" height="412.66665649414062"/>
         <image name="button-06" width="412.66665649414062" height="412.66665649414062"/>
         <image name="logo-02" width="2535.5" height="324.5"/>
-        <image name="roundSquare-03" width="628.5" height="620.5"/>
+        <image name="mainbutton-03" width="628.5" height="620.5"/>
+        <image name="mainbutton-11" width="628.5" height="620.5"/>
+        <image name="mainbutton-12" width="628.5" height="620.5"/>
+        <image name="mainbutton-13" width="628.5" height="620.5"/>
         <image name="search-01" width="625" height="625"/>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
