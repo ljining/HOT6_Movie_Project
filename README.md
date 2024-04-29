@@ -1,19 +1,32 @@
 # HOT6_Movie_Project
 
-## TMDB API
+![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white) ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white) ![Xcode](https://img.shields.io/badge/Xcode-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
+
+🎬 영화 예매 앱 MEGA 6 BOX 🍿
+-------------
+(내용 추가추가추가)
+
+🛜 사용 API
+-------------
+#### TMDB API
 - THE MOVIE DATABASE (https://developer.themoviedb.org/reference/intro/getting-started)
 
-## API 사용 목록 
-- 영화 예매 페이지/영화 상세 페이지 (https://api.themoviedb.org/3/movie/{movie_id})
-- 영화 검색 페이지 (https://api.themoviedb.org/3/search/movie)
-- 메인 페이지 (https://api.themoviedb.org/3/movie/now_playing)
-- 영화 상세페이지 (https://api.themoviedb.org/3/movie/{ movie_id }/credits)
-- 배우 필모그래피 (https://api.themoviedb.org/3/search/person)
 
-## 라이브러리 
+#### 사용 API 목록 
+- [영화 예매 페이지/영화 상세 페이지](https://api.themoviedb.org/3/movie/{movie_id})
+- [영화 검색 페이지](https://api.themoviedb.org/3/search/movie)
+- [메인 페이지](https://api.themoviedb.org/3/movie/now_playing)
+- [영화 상세페이지](https://api.themoviedb.org/3/movie/{ movie_id }/credits)
+- [배우 필모그래피](https://api.themoviedb.org/3/search/person)
+
+
+### 라이브러리 
+-------------
 - Kingfisher
 
+
 ## 실제구현화면
+-------------
 <p float="left">
   <img src="https://github.com/ljining/HOT6_Movie_Project/assets/156410026/3a16e59b-ebd4-457d-ac45-5bbb0c66d124" width=200">
   <img src="https://github.com/ljining/HOT6_Movie_Project/assets/156410026/4befd92e-a536-4df9-ad7c-d3aedeef77d2" width=200">
