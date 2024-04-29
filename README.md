@@ -4,7 +4,7 @@
 
 🎬 영화 예매 앱 MEGA 6 BOX 🍿
 -------------
-(내용 추가추가추가)
+![readMePage](https://github.com/ljining/HOT6_Movie_Project/assets/161561452/47fad75d-250d-4e6a-aad7-33bb5dc021c3)
 
 🛜 사용 API
 -------------
